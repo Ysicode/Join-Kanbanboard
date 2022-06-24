@@ -1,0 +1,43 @@
+.navbarMain{
+    height: calc(100% - 32px);
+    background-color: #1E3190;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0px;
+}
+.navbarSub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbarLogo{
+    object-fit: cover;
+    height: 50px;
+    padding-bottom: 40px;
+}
+
+.navbarUserImg{
+    object-fit: cover;
+    height: 40px;
+    padding-top: 20px;
+}
+
+.navbarLinks{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbarLinks a{
+    padding: 10px 40px 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.navbarLinks a div{
+    margin-right: 24px;
+    width: 3px;
+    height: 25px;
+    background-color: white;
+}
