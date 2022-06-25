@@ -40,6 +40,11 @@ p {
     width: 94%;
     margin-top: 15px;
     padding: 5px;
+    cursor: pointer;
+}
+
+.board_task:hover {
+    background: #00000031;
 }
 
 .board_task_date {
@@ -54,10 +59,6 @@ p {
 .board_task_assigned_name {
     font-size: 17px;
     color: rgb(236, 79, 79);
-}
-
-.board_task_details {
-    overflow: scroll;
 }
 
 .details_text {
