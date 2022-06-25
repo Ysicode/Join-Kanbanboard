@@ -6,21 +6,52 @@
     height: 100%;
 }
 
+.backlog_columns {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.columns_titles {
+    font-size: 22px;
+}
+
+.column_assignedTo {
+    margin-left: 15px;
+    width: 20%;
+}
+
+.column_Title {
+    width: 20%;
+}
+
+.column_category {
+    width: 15%;
+}
+
+.column_details {
+    width: 45%;
+}
+
 .backlog_rows {
     height: 100px;
-    width: 100%;
+    width: calc(100% - 5px);
     background: chocolate;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     border-left: 5px solid red;
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .backlog_user {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 25%;
+    width: 20%;
+    margin-left: 12.5px;
 }
 
 .backlog_user_pic {
@@ -28,10 +59,38 @@
     height: 50px;
     object-fit: contain;
     border-radius: 100px;
-    margin-left: 10px;
     margin-right: 10px;
 }
 
 .backlog_user_name {
+    font-size: 20px;
+}
+
+.backlog_title {
+    width: 20%;
+}
+
+.backlog_task_title {
+font-size: 20px;
+}
+
+.backlog_category {
+    width: 15%;
+}
+
+.backlog_task_category {
+    font-size: 20px;
+}
+
+.backlog_details {
+    width: 45%;
+}
+
+.backlog_task_details {
     font-size: 17px;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
