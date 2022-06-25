@@ -20,13 +20,13 @@ h1{
 }
 
 .mainArea{
-    background-color: red;
+    background-color: #f3f3f3;
     height: calc(100vh -32px);
     width: 100%;
     padding: 16px;
 }
 
 .content{
-    background-color: gray;
-    height: 400px;     /* Diese Höhe ist nur ein Beispiel */
+    background-color: rgb(161, 161, 161);
+    height: 90vh;     /* Diese Höhe ist nur ein Beispiel */
 }
