@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +11,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 
-    <link rel="stylesheet" href="style/generalstyle.css">    
-    <link rel="stylesheet" href="style/media.css">    
+    <link rel="stylesheet" href="style/generalstyle.css">
+    <link rel="stylesheet" href="style/media.css">
     <link rel="stylesheet" href="style/navbar.css">
 
 
-    <link rel="stylesheet" href="style/task.css">    
-    
+    <link rel="stylesheet" href="style/task.css">
+
     <script src="script/script.js"></script>
     <script src="script/load.js"></script>
 
     <title>Gruppenarbeit Join 265</title>
 
 </head>
+
 <body onload="init('task')">
     <div HTML_Template="templateHTML/navbar.html"></div>
     <div class="mainArea">
@@ -33,12 +34,55 @@
         </div>
         <div class="content" id="content">
 
+            <div class="max-width">
+                <div class="addTask">
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline">TITLE</div>
+                        <input class="userInput" id="title" type="text" placeholder="Give your task a title">
+                    </div>
 
-            <p>Hier steht der Content<br>Jede Seite hat eine eigene Style Datei</p>
-            
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline">DUE DATE</div>
+                        <input class="userInputDate" type="date" id="date">
+                    </div>
+
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline">CATAGORY</div>
+                        <select class="userCatagoryChoice" id="catagory" placeholder="Select a catagory">
+                            <option>Marketing</option>
+                            <option>Development</option>
+                            <option>Design</option>
+                        </select>
+                    </div>
+
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline">URGENCY</div>
+                        <select class="userUrgencyChoice" id="catagory" placeholder="Select a catagory">
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline"> DESCRIPTION </div>
+                        <input class="userInput" type="text" id="description">
+                    </div>
+
+                    <div class="addTaskChild">
+                        <div class="catagoryHeadline"> ASSIGNED TO </div>
+                        <img src="./btn/icon plus.png">
+                        <div class="btnContainer">
+                        <button class="cancelbtn" onclick="cancelTask()">Cancel</button>
+                        <button class="createbtn" onclick="createTask()">CREATE TASK</button></div>
+                    </div>
+
+                </div>
+            </div>
+
 
         </div>
-
     </div>
 </body>
+
 </html>
