@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/generalstyle.css">    
-    <link rel="stylesheet" href="style/media.css">    
+    <link rel="stylesheet" href="style/generalstyle.css">
+    <link rel="stylesheet" href="style/media.css">
     <link rel="stylesheet" href="style/navbar.css">
 
 
-    <link rel="stylesheet" href="style/backlog.css">    
-    
+    <link rel="stylesheet" href="style/backlog.css">
+
     <script src="script/script.js"></script>
     <script src="script/load.js"></script>
 
     <title>Gruppenarbeit Join 265</title>
 
 </head>
+
 <body onload="init()">
     <div HTML_Template="templateHTML/navbar.html"></div>
     <div class="mainArea">
@@ -25,13 +27,32 @@
             <p class="subHeadlineH1">Learning Management System Project</p>
         </div>
         <div class="content" id="content">
-
-
-            <p>Hier steht der Content<br>Jede Seite hat eine eigene Style Datei</p>
-            
-
+            <div class="content_backlog">
+                <div class="backlog_columns">
+                    <div class="column_assignedTo">
+                        <p>ASSIGNED TO</p>
+                    </div>
+                    <div class="column_Title">
+                        <p>TITLE</p>
+                    </div>
+                    <div class="column_category">
+                        <p>CATEGORY</p>
+                    </div>
+                    <div class="column_details">
+                        <p>DETAILS</p>
+                    </div>
+                </div>
+                <div class="backlog_rows">
+                    <div class="backlog_user">
+                        <img class="backlog_user_pic" src="img/Simon Weiss.jpg" alt="">
+                        <p class="backlog_user_name">Simon Weiss</p>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
 
     </div>
 </body>
+
 </html>
