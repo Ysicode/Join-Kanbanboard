@@ -1,4 +1,3 @@
-
 .d_none {
     display: none;
 }
@@ -129,7 +128,7 @@ p {
 }
 
 .cancel_icon {
-    width:  clamp(30px, 5px + 5vw, 60px);
+    width: clamp(30px, 5px + 5vw, 60px);
     height: clamp(30px, 5px + 5vw, 60px);
     border-radius: 100px;
     position: absolute;
@@ -160,7 +159,7 @@ p {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    
+
 }
 
 .task_overlay_date {
@@ -206,16 +205,19 @@ p {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .task_overlay_details {
     font-size: clamp(15px, 1px + 5vw, 35px);
 }
 
-.task_overlay_textarea {
-    width: 100%;
+.area_details {
     height: 100%;
-    border: none;
-    font-size: clamp(10px, 1px + 3vw, 20px);
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.area_details_text {
+    font-size: clamp(13px, 5px + 2vw, 25px)
 }

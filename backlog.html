@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style/backlog.css">
 
     <script src="script/mini_backend.js"></script>
-
+<script src="script/backlog.js"></script>
     <script src="script/script.js"></script>
     <script src="script/load.js"></script>
 
@@ -48,7 +48,7 @@
                         <p class="columns_titles">DETAILS</p>
                     </div>
                 </div>
-                <div class="backlog_rows">
+                <div onclick="openSingleView()" id="backlog_row_0" class="backlog_rows">
                     <div class="backlog_user">
                         <img class="backlog_user_pic" src="img/Simon Weiss.jpg" alt="">
                         <p class="backlog_user_name">Simon Weiss</p>
@@ -63,7 +63,7 @@
                         <p class="backlog_task_details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quod reprehenderit a quaerat consequuntur, assumenda quidem quos rerum enim, ipsum sunt nisi qui officiis fuga totam tempora adipisci libero laboriosam?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, commodi ratione. Fugit voluptates commodi ullam itaque possimus adipisci illum doloribus praesentium, reiciendis recusandae dolorum illo placeat. Debitis est perferendis eligendi.</p>
                     </div>         
                 </div>
-                <div class="backlog_rows">
+                <div onclick="openSingleView()" class="backlog_rows">
                     <div class="backlog_user">
                         <img class="backlog_user_pic" src="img/Simon Weiss.jpg" alt="">
                         <p class="backlog_user_name">Simon Weiss</p>
@@ -141,8 +141,8 @@
             </div>
         </div>
     </div>
-    <div class="d_none d_flex area_task_overlay">
-        <img class="cancel_icon" src="img/x.png" alt="">
+    <div id="task_overlay" class="d_none d_flex area_task_overlay">
+        <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
         <div class="task_overlay">
             <div class="task_overlay_head">
                 <p class="task_overlay_date">26.06.2022</p>
@@ -157,7 +157,12 @@
             </div>
             <div class="task_overlay_bottom">
                 <p class="task_overlay_details">DETAILS</p>
-                <textarea class="task_overlay_textarea" name="" id="" cols="30" rows="10">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.</textarea>
+                <div class="area_details">
+                    <span class="area_details_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo
+                        Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo. ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.
+                    </span>
+
+                </div>
             </div>
             
         </div>
