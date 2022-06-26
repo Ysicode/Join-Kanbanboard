@@ -2,7 +2,10 @@
 
 async function init (page){
     await includeHTML();
+    await downloadFromServer();
+    tasks = JSON.parse(backend.getItem('tasks'))|| [];
     navbarSelection(page);
+
 }
 
 function navbarSelection(page){

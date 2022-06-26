@@ -21,6 +21,7 @@
 
     <script src="script/script.js"></script>
     <script src="script/load.js"></script>
+    <script src="script/task.js"></script>
 
     <title>Gruppenarbeit Join 265</title>
 
@@ -35,21 +36,21 @@
         </div>
         <div class="content" id="content">
 
-            <div class="max-width">
+                <form onsubmit="createTask()">
                 <div class="addTask">
                     <div class="addTaskChild">
                         <div class="catagoryHeadline">TITLE</div>
-                        <input class="userInput" id="title" type="text" placeholder="Give your task a title">
+                        <input required minlength="2" class="userInput" id="title" type="text" placeholder="Give your task a title">
                     </div>
 
                     <div class="addTaskChild">
                         <div class="catagoryHeadline">DUE DATE</div>
-                        <input class="userInputDate" type="date" id="date">
+                        <input required class="userInputDate" type="date" id="date">
                     </div>
 
                     <div class="addTaskChild">
                         <div class="catagoryHeadline">CATAGORY</div>
-                        <select class="userCatagoryChoice" id="catagory" placeholder="Select a catagory">
+                        <select required class="userCatagoryChoice" id="catagory" placeholder="Select a catagory">
                             <option>Marketing</option>
                             <option>Development</option>
                             <option>Design</option>
@@ -58,7 +59,7 @@
 
                     <div class="addTaskChild">
                         <div class="catagoryHeadline">URGENCY</div>
-                        <select class="userUrgencyChoice" id="catagory" placeholder="Select a catagory">
+                        <select required class="userUrgencyChoice" id="urgency" placeholder="Select a catagory">
                             <option>High</option>
                             <option>Medium</option>
                             <option>Low</option>
@@ -67,23 +68,21 @@
 
                     <div class="addTaskChild">
                         <div class="catagoryHeadline"> DESCRIPTION </div>
-                        <input class="userInput" type="text" id="description">
+                        <input required minlength="5" class="userInput" type="text" id="description">
                     </div>
 
                     <div class="addTaskChild">
                         <div class="catagoryHeadline"> ASSIGNED TO </div>
                         <img src="./btn/icon plus.png">
                         <div class="btnContainer">
-                        <button class="cancelbtn" onclick="cancelTask()">Cancel</button>
-                        <button class="createbtn" onclick="createTask()">CREATE TASK</button></div>
+                            <button class="cancelbtn" onclick="cancelTask()">CANCEL</button>
+                            <button class="createbtn">CREATE TASK</button>
+                        </div>
                     </div>
-
                 </div>
+                </form>
             </div>
-
-
         </div>
-    </div>
 </body>
 
 </html>
