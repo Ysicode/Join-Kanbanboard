@@ -141,19 +141,25 @@
             </div>
         </div>
     </div>
-    <div class="area_task_overlay">
-        <img class="cancel_icon" src="img/cancel.png" alt="">
+    <div class="d_none d_flex area_task_overlay">
+        <img class="cancel_icon" src="img/x.png" alt="">
         <div class="task_overlay">
-            <p class="task_overlay_date">26.06.2022</p>
-            <div class="d_flex">
-                <p class="task_overlay_title">This is a title</p>
-                <p class="task_overlay_importance">Important</p>
-            </div> 
-            <div class="task_overlay_user">
-                <img class="task_overlay_userpic" src="img/Simon Weiss.jpg" alt="">
-                <p class="task_overlay_username">Simon Weiss</p>
+            <div class="task_overlay_head">
+                <p class="task_overlay_date">26.06.2022</p>
+                <div class="d_flex task_overlay_title_line">
+                    <p class="task_overlay_title">This is a title</p>
+                    <p class="task_overlay_importance">Important</p>
+                </div> 
+                <div class="task_overlay_user">
+                    <img class="task_overlay_userpic" src="img/Simon Weiss.jpg" alt="">
+                    <p class="task_overlay_username">Simon Weiss</p>
+                </div>
             </div>
-            <textarea class="task_overlay_textarea" name="" id="" cols="30" rows="10">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.</textarea>
+            <div class="task_overlay_bottom">
+                <p class="task_overlay_details">DETAILS</p>
+                <textarea class="task_overlay_textarea" name="" id="" cols="30" rows="10">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, in architecto laudantium iure quisquam labore ex porro quo ea soluta omnis quos delectus sed beatae totam at rem! Quo.</textarea>
+            </div>
+            
         </div>
     </div>
 </body>
