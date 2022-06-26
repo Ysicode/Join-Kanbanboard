@@ -31,5 +31,6 @@ h1{
 }
 
 .content{
-    height: 90vh;     /* Diese Höhe ist nur ein Beispiel */
+    height: 85vh;     /* Diese Höhe ist nur ein Beispiel */
+    margin-top: 5vh;
 }
