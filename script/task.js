@@ -21,24 +21,7 @@ function getTaskFieldsValue(){
         'urgency': urgency.value,
         'description': description.value,
         'status': 'todo'
-<<<<<<< HEAD
     }
-=======
-    };
-
-    tasks.push(task);
-
-
-        taskAsString();
-
-    
-
-    title.value ='';
-    date.value ='';
-    catagory.value ='';
-    urgency.value ='';
-    description.value ='';
->>>>>>> 52a9e9d4629d0614ba1a531161344963c4609bd3
 }
 
 async function saveTasks() {
