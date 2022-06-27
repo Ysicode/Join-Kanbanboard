@@ -36,7 +36,7 @@
         </div>
         <div class="content" id="content">
 
-                <form onsubmit="createTask()">
+                <form onsubmit="event.preventDefault(), createTask()">
                 <div class="addTask">
                     <div class="addTaskChild">
                         <div class="catagoryHeadline">TITLE</div>
@@ -75,8 +75,8 @@
                         <div class="catagoryHeadline"> ASSIGNED TO </div>
                         <img src="./btn/icon plus.png">
                         <div class="btnContainer">
-                            <button class="cancelbtn" onclick="cancelTask()">CANCEL</button>
-                            <button class="createbtn">CREATE TASK</button>
+                            <button class="cancelbtn" type="reset">CANCEL</button>
+                            <button class="createbtn" type="submit">CREATE</button> TASK</button>
                         </div>
                     </div>
                 </div>
