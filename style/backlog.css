@@ -8,6 +8,13 @@
     justify-content: center;
 }
 
+.d_flex_column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 p {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -19,6 +26,10 @@ p {
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
+}
+
+.area_tasks_backlog {
+    width: 100%;
 }
 
 .backlog_columns {
@@ -57,10 +68,21 @@ p {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-left: 5px solid red;
     cursor: pointer;
     margin-bottom: 15px;
     cursor: pointer;
+}
+
+.backlog_rows_low {
+    border-left: 5px solid rgb(0, 255, 106);
+}
+
+.backlog_rows_medium {
+    border-left: 5px solid rgb(255, 251, 0);
+}
+
+.backlog_rows_high {
+    border-left: 5px solid rgb(255, 60, 0);
 }
 
 .backlog_rows:hover {
