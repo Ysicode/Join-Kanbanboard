@@ -13,7 +13,8 @@ async function createTask() {
         'date': date.value,
         'catagory': catagory.value,
         'urgency': urgency.value,
-        'description': description.value
+        'description': description.value,
+        'status': 'todo'
     };
 
     tasks.push(task);
