@@ -35,7 +35,6 @@ p {
 
 .board_task {
     height: 150px;
-    border-left: 5px solid rgb(236, 79, 79);
     background: #00000012;
     width: 94%;
     margin-top: 15px;

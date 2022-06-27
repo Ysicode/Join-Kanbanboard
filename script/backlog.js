@@ -60,21 +60,22 @@ function renderBacklockTasks() {
 }
 
 function getUrgencyBorderColour(i, color) {
-    document.getElementById(`backlog_row_${i}`).classList.add(`backlog_rows_${color}`);
+    document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
 }
 
 function renderTaskSingleView(i) {
     let content = document.getElementById('task_overlay');
     content.innerHTML = '';
     let task = test[i];
+    let fontcolor = task['urgency'];
     content.innerHTML += `
     <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
         <div class="task_overlay">
             <div class="task_overlay_head">
                 <p class="task_overlay_date">${task['date']}</p>
                 <div class="d_flex task_overlay_title_line">
-                    <p class="task_overlay_title">This is a title</p>
-                    <p class="task_overlay_importance">High<p class="">Urgency</p> </p>
+                    <p class="task_overlay_title">${task['title']}</p>
+                    <p id="urgency_overlay" class="task_overlay_importance">${task['urgency']}<p class="">Urgency</p> </p>
                 </div>
                 <div class="task_overlay_user">
                     <img class="task_overlay_userpic" src="img/Simon Weiss.jpg" alt="">
@@ -84,12 +85,15 @@ function renderTaskSingleView(i) {
             <div class="task_overlay_bottom">
                 <p class="task_overlay_details">DETAILS</p>
                 <div class="area_details">
-                    <span class="area_details_text">123
+                    <span class="area_details_text">${task['description']}
                     </span>
-
                 </div>
             </div>
-
         </div>
     `;
+    geturgencyFontColor(fontcolor);
+}
+
+function geturgencyFontColor(fontcolor) {
+    document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
 }

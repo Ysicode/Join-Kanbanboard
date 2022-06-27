@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style/generalstyle.css">
     <link rel="stylesheet" href="style/media.css">
     <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/backlog.css">
 
     <link rel="stylesheet" href="style/board.css">
 
@@ -27,7 +28,7 @@
 
 </head>
 
-<body onload="init('board')">
+<body onload="init('board'); renderTasksAtBoard()">
     <div HTML_Template="templateHTML/navbar.html"></div>
     <div class="mainArea">
         <div>
@@ -38,270 +39,31 @@
             <div class="content_board">
                 <div class="board_columns">
                     <h2>TO DO</h2>
-                    <div class="area_toDo">
-                        <div onclick="openSingleView()" class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Test</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
+                    <div id="todos" class="area_toDo">
+                     
+                        
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>IN PROGRESS</h2>
-                    <div class="area_toDo">
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
+                    <div id="in_progress" class="area_toDo">
+                        
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>TESTING</h2>
-                    <div class="area_toDo">
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
+                    <div id="testing" class="area_toDo">
+                        
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>DONE</h2>
-                    <div class="area_toDo">
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
-                        <div class="board_task">
-                            <p class="board_task_date">26.06.2022</p>
-                            <p class="board_task_title">This is a title</p>
-                            <p class="board_task_assigned_name">Simon Weiss</p>
-                            <div class="board_task_details">
-                                <p class="details_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                    sed, voluptates, suscipit deleniti culpa, voluptatem a officiis nihil voluptas
-                                    blanditiis iure magnam facilis tempora odio itaque nam vitae tempore est? Lorem
-                                    ipsum dolor sit amet consectetur adipisicing elit. Rerum sed, voluptates, suscipit
-                                    deleniti culpa, voluptatem a officiis nihil voluptas blanditiis iure magnam facilis
-                                    tempora odio itaque nam vitae tempo</p>
-                            </div>
-                        </div>
+                    <div id="done" class="area_toDo">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>   
     </div>
 </body>
 
