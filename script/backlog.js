@@ -4,7 +4,8 @@ let test = [{
     'catagory': 'Marketing',
     'urgency': 'high',
     'description': 'Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 ',
-    'status': 'todo'
+    'status': 'inprogress',
+    'id': 0
 },
 {
     'title': 'Design Test',
@@ -12,14 +13,34 @@ let test = [{
     'catagory': 'Design',
     'urgency': 'low',
     'description': 'Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung ',
-    'status': 'todo'
+    'status': 'todo',
+    'id': 1
 }, {
+    'title': 'Noch ein Tasks',
+    'date': '20.05.2022',
+    'catagory': 'Management',
+    'urgency': 'low',
+    'description': 'DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy  ',
+    'status': 'done',
+    'id': 2
+},
+{
     'title': 'Managment Test',
     'date': '15.05.2022',
     'catagory': 'Management',
+    'urgency': 'high',
+    'description': ' DAs As ist eine Management strategy DAs ist eine Management strategy  ',
+    'status': 'done',
+    'id': 3
+},
+{
+    'title': 'Test Simon',
+    'date': '11.06.2022',
+    'catagory': 'Design',
     'urgency': 'medium',
-    'description': 'DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy  ',
-    'status': 'todo'
+    'description': ' bsiwbwe  deiu d ewd wei udewd we dwe d we d weiud weud weud opweud wd we duwedweudhuwedhuwed  ',
+    'status': 'testing',
+    'id': 4
 }];
 
 

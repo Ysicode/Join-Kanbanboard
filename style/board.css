@@ -33,6 +33,10 @@ p {
     overflow: auto;
 }
 
+.area_toDo_draganddrop {
+    background: #c5c5c5;
+}
+
 .board_task {
     height: 150px;
     background: #00000012;

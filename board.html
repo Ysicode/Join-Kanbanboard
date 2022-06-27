@@ -39,32 +39,31 @@
             <div class="content_board">
                 <div class="board_columns">
                     <h2>TO DO</h2>
-                    <div id="todos" class="area_toDo">
+                    <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todos')" ondragover="allowDrop(event); addHighlight('todos')" id="todos" class="area_toDo">
                      
                         
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>IN PROGRESS</h2>
-                    <div id="in_progress" class="area_toDo">
+                    <div ondrop="dropTask('inprogress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event); addHighlight('in_progress')" id="in_progress" class="area_toDo">
                         
                     </div>
                 </div>
-                <div class="board_columns">
+                <div  class="board_columns">
                     <h2>TESTING</h2>
-                    <div id="testing" class="area_toDo">
+                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); addHighlight('testing')" id="testing" class="area_toDo">
                         
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>DONE</h2>
-                    <div id="done" class="area_toDo">
+                    <div ondrop="dropTask('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); addHighlight('done')" id="done" class="area_toDo">
                     </div>
                 </div>
             </div>
         </div>
     </div>   
     </div>
-</body>
 
 </html>
