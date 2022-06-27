@@ -70,3 +70,28 @@ p {
     -webkit-box-orient: vertical;
     overflow-y: hidden;
 }
+
+@media (max-width: 1400px) {
+    .content_board {
+flex-direction: column;
+    }
+
+    .board_columns {
+        height: 24%;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .area_toDo {
+        flex-direction: row;
+    }
+
+    .board_task {
+        height: 90%;
+    border-left: 5px solid rgb(236, 79, 79);
+    background: #00000012;
+    width: 217px;
+    padding: 5px;
+    cursor: pointer;
+    }
+}
