@@ -4,7 +4,7 @@ function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);
     saveTasks();
-    clearTaskFields()
+    forwardingToBoard();
 }
 
 function getTaskFieldsValue(){
@@ -13,6 +13,7 @@ function getTaskFieldsValue(){
     let catagory = document.getElementById('catagory');
     let urgency = document.getElementById('urgency');
     let description = document.getElementById('description');
+    let id = tasks.length;
 
     return{
         'title': title.value,
@@ -20,7 +21,8 @@ function getTaskFieldsValue(){
         'catagory': catagory.value,
         'urgency': urgency.value,
         'description': description.value,
-        'status': 'todo'
+        'status': 'todo',
+        'id': id
     }
 }
 
@@ -29,10 +31,6 @@ async function saveTasks() {
     await backend.setItem('tasks', taskAsString);
 }
 
-function clearTaskFields() {
-    document.getElementById('title').value = '';
-    document.getElementById('date').value = '';
-    document.getElementById('catagory').value = '';
-    document.getElementById('urgency').value = '';
-    document.getElementById('description').value = '';
+function forwardingToBoard(){
+    window.open("board.html");
 }

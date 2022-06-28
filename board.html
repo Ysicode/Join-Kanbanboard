@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="style/board.css">
 
     <script src="script/mini_backend.js"></script>
+    <script src="script/task.js"></script>
     <script src="script/backlog.js"></script>
     <script src="script/board.js"></script>
     <script src="script/script.js"></script>
@@ -28,7 +29,7 @@
 
 </head>
 
-<body onload="init('board'); renderTasksAtBoard()">
+<body onload="init('board')">
     <div HTML_Template="templateHTML/navbar.html"></div>
     <div class="mainArea">
         <div>
@@ -39,26 +40,26 @@
             <div class="content_board">
                 <div class="board_columns">
                     <h2>TO DO</h2>
-                    <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todos')" ondragover="allowDrop(event); addHighlight('todos')" id="todos" class="area_toDo">
+                    <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event), addHighlight('todo')" id="tasks_todo" class="area_toDo">
                      
                         
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>IN PROGRESS</h2>
-                    <div ondrop="dropTask('inprogress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event); addHighlight('in_progress')" id="in_progress" class="area_toDo">
+                    <div ondrop="dropTask('in_progress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event), addHighlight('in_progress')" id="tasks_in_progress" class="area_toDo">
                         
                     </div>
                 </div>
                 <div  class="board_columns">
                     <h2>TESTING</h2>
-                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); addHighlight('testing')" id="testing" class="area_toDo">
+                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event), addHighlight('testing')" id="tasks_testing" class="area_toDo">
                         
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>DONE</h2>
-                    <div ondrop="dropTask('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); addHighlight('done')" id="done" class="area_toDo">
+                    <div ondrop="dropTask('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event), addHighlight('done')" id="tasks_done" class="area_toDo">
                     </div>
                 </div>
             </div>

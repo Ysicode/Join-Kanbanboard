@@ -1,51 +1,6 @@
-let test = [{
-    'title': 'Test 123',
-    'date': '23.06.2022',
-    'catagory': 'Marketing',
-    'urgency': 'high',
-    'description': 'Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 Test 123 ',
-    'status': 'inprogress',
-    'id': 0
-},
-{
-    'title': 'Design Test',
-    'date': '15.05.2022',
-    'catagory': 'Design',
-    'urgency': 'low',
-    'description': 'Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung Das ist eine Beschreibung ',
-    'status': 'todo',
-    'id': 1
-}, {
-    'title': 'Noch ein Tasks',
-    'date': '20.05.2022',
-    'catagory': 'Management',
-    'urgency': 'low',
-    'description': 'DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy DAs ist eine Management strategy  ',
-    'status': 'done',
-    'id': 2
-},
-{
-    'title': 'Managment Test',
-    'date': '15.05.2022',
-    'catagory': 'Management',
-    'urgency': 'high',
-    'description': ' DAs As ist eine Management strategy DAs ist eine Management strategy  ',
-    'status': 'done',
-    'id': 3
-},
-{
-    'title': 'Test Simon',
-    'date': '11.06.2022',
-    'catagory': 'Design',
-    'urgency': 'medium',
-    'description': ' bsiwbwe  deiu d ewd wei udewd we dwe d we d weiud weud weud opweud wd we duwedweudhuwedhuwed  ',
-    'status': 'testing',
-    'id': 4
-}];
-
-
 function openSingleView(i) {
-    document.getElementById('task_overlay').classList.remove('d_none');
+    console.log(i)
+    document.getElementById('board_task_'+i).classList.remove('d_none');
     renderTaskSingleView(i);
 }
 
@@ -56,8 +11,8 @@ function closeSingleView() {
 function renderBacklockTasks() {
     let content = document.getElementById('content_backlog');
     content.innerHTML = '';
-    for (let i = 0; i < test.length; i++) {
-        const task = test[i];
+    for (let i = 0; i < tasks.length; i++) {
+        const task = tasks[i];
         const color = task['urgency'];
         content.innerHTML += `
         <div onclick="openSingleView(${i})" id="backlog_row_${i}" class="backlog_rows">
@@ -87,7 +42,7 @@ function getUrgencyBorderColour(i, color) {
 function renderTaskSingleView(i) {
     let content = document.getElementById('task_overlay');
     content.innerHTML = '';
-    let task = test[i];
+    let task = tasks[i];
     let fontcolor = task['urgency'];
     content.innerHTML += `
     <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">

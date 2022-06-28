@@ -2,64 +2,55 @@ let currentDraggedElement;
 
 function allowDrop(ev) {
     ev.preventDefault();
-  }
+}
+
+function startDragging(index) {
+    currentDraggedElement = index;
+}
+    
+function dropTask(newStatus) {
+    tasks[currentDraggedElement]['status'] = newStatus;
+    Array.from(document.getElementsByClassName('area_toDo_draganddrop')).forEach(
+        function (element) {
+            element.classList.remove('area_toDo_draganddrop');  
+            }
+        );
+    endMoveToOtherBoard();
+}
+
+async function endMoveToOtherBoard(){
+    await saveTasks()
+    renderTasksAtBoard();
+}
+    
+function addHighlight(overColumn) {
+    document.getElementById('tasks_'+`${overColumn}`).classList.add('area_toDo_draganddrop');
+}
+    
+function removeHighlight(besideColumn) {
+    document.getElementById('tasks_'+`${besideColumn}`).classList.remove('area_toDo_draganddrop');
+}
 
 function renderTasksAtBoard() {
-    renderTodos();
-    renderInProgress();
-    renderTesting();
-    renderDone();
+    renderBoards('todo');
+    renderBoards('in_progress');
+    renderBoards('testing');
+    renderBoards('done');
 }
 
-function renderTodos() {
-    let content = document.getElementById('todos');
+function renderBoards(board) {
+    let content = document.getElementById('tasks_'+board);
     content.innerHTML = '';
-    let todo = test.filter(t => t['status'] == 'todo')
-    for (let i = 0; i < todo.length; i++) {
-        const task = todo[i];
-        let color = task['urgency'];
-        let index = task['id'];
-        content.innerHTML += getTasksAtBoardColumns(index, task);
-            getTodoBorderLeft(index, color);
-    }
-}
+    let boardFiltered = tasks.filter(t => t['status'] == board)
 
-function renderInProgress() {
-    let content = document.getElementById('in_progress');
-    content.innerHTML = '';
-    let inProgress = test.filter(t => t['status'] == 'inprogress')
-    for (let i = 0; i < inProgress.length; i++) {
-        const task = inProgress[i];
+    for (let i = 0; i < boardFiltered.length; i++) {
+        const task = boardFiltered[i];
         let color = task['urgency'];
-        let index = task['id'];
-        content.innerHTML += getTasksAtBoardColumns(index, task);
-            getTodoBorderLeft(index, color);
-    }
-}
-
-function renderTesting() {
-    let content = document.getElementById('testing');
-    content.innerHTML = '';
-    let testing = test.filter(t => t['status'] == 'testing')
-    for (let i = 0; i < testing.length; i++) {
-        const task = testing[i];
-        let color = task['urgency'];
-        let index = task['id'];
-        content.innerHTML += getTasksAtBoardColumns(index, task);
-            getTodoBorderLeft(index, color);
-    }
-}
-
-function renderDone() {
-    let content = document.getElementById('done');
-    content.innerHTML = '';
-    let done = test.filter(t => t['status'] == 'done')
-    for (let i = 0; i < done.length; i++) {
-        const task = done[i];
-        let color = task['urgency'];
-        let index = task['id'];
-        content.innerHTML += getTasksAtBoardColumns(index, task);
-            getTodoBorderLeft(index, color);
+        let taskID = task['id'];
+        console.log(color)
+        console.log(taskID, color, task)
+        content.innerHTML += getTasksAtBoardColumns(taskID, task);
+        getTodoBorderLeft(taskID, color);
     }
 }
 
@@ -69,7 +60,7 @@ function getTodoBorderLeft(index, color) {
 
 function getTasksAtBoardColumns(index, task) {
     return `
-    <div ondragstart="startDragging(${index})" draggable="true" id="board_task_${index}" onclick="openSingleView()" class="board_task">
+    <div ondragstart="startDragging(${index})" draggable="true" id="board_task_${index}" onclick="openSingleView(${index})" class="board_task">
         <p class="board_task_date">${task['date']}</p>
         <p class="board_task_title">${task['title']}</p>
         <p class="board_task_assigned_name">Simon Weiss</p>
@@ -78,28 +69,4 @@ function getTasksAtBoardColumns(index, task) {
         </div>
     </div>
     `
-}
-
-function startDragging(index) {
-currentDraggedElement = index;
-}
-
-function dropTask(newStatus) {
-    test[currentDraggedElement]['status'] = newStatus;
-    Array.from(document.getElementsByClassName('area_toDo_draganddrop')).forEach(
-        function (element) {
-            element.classList.remove('area_toDo_draganddrop');  
-        }
-    );
-    setTimeout(() => {
-        renderTasksAtBoard();
-    }, 200);
-}
-
-function addHighlight(overColumn) {
-    document.getElementById(`${overColumn}`).classList.add('area_toDo_draganddrop');
-}
-
-function removeHighlight(besideColumn) {
-    document.getElementById(`${besideColumn}`).classList.remove('area_toDo_draganddrop');
 }
