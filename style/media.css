@@ -1,9 +1,12 @@
 /* Media NavBar */
 
-@media (max-width :800px) {
+@media (max-width :1000px) {
 
     body{
         display: block;
+    }
+    .mainArea{
+        width: auto;
     }
     .navbarLinks{
         flex-direction: row !important;
@@ -24,6 +27,7 @@
         justify-content: space-around !important;
         align-items: center;
         padding: 16px !important;
+        
     }
     .navbarSub{
         display: none !important;    

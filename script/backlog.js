@@ -1,6 +1,6 @@
 function openSingleView(i) {
     console.log(i)
-    document.getElementById('board_task_'+i).classList.remove('d_none');
+    document.getElementById('task_overlay').classList.remove('d_none');
     renderTaskSingleView(i);
 }
 
@@ -27,7 +27,7 @@ function renderTaskSingleView(i) {
     let content = document.getElementById('task_overlay');
     content.innerHTML = '';
     let task = tasks[i];
-    let fontcolor = task['urgency'];
+    let fontcolor = tasks[i]['urgency'];
     content.innerHTML += `
     <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
         <div class="task_overlay">
@@ -38,8 +38,8 @@ function renderTaskSingleView(i) {
                     <p id="urgency_overlay" class="task_overlay_importance">${task['urgency']}<p class="">Urgency</p> </p>
                 </div>
                 <div class="task_overlay_user">
-                    <img class="task_overlay_userpic" src="img/Simon Weiss.jpg" alt="">
-                    <p class="task_overlay_username">Simon Weiss</p>
+                    <img class="task_overlay_userpic" src="img/${task['user']}.jpg" alt="">
+                    <p class="task_overlay_username">${task['user']}</p>
                 </div>
             </div>
             <div class="task_overlay_bottom">

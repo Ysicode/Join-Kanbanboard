@@ -73,17 +73,7 @@ p {
     cursor: pointer;
 }
 
-.color_low {
-    color: rgb(43, 151, 88) !important;
-}
 
-.color_medium {
-    color: rgb(255, 217, 0) !important;
-}
-
-.color_high {
-    color: rgb(255, 60, 0) !important;
-}
 
 
 .backlog_rows:hover {
