@@ -58,11 +58,3 @@ function selectUser(userID) {
     }
     currentUser = userID;
 }
-
-function checkUserName(){
-
-
-
-    return user 
-   
-}
