@@ -47,8 +47,6 @@ function renderBoards(board) {
         const task = boardFiltered[i];
         let color = task['urgency'];
         let taskID = task['id'];
-        console.log(color)
-        console.log(taskID, color, task)
         content.innerHTML += getTasksAtBoardColumns(taskID, task);
         getTodoBorderLeft(taskID, color);
     }
