@@ -1,6 +1,5 @@
 let jsonFromServer = [];
-let BASE_SERVER_URL;
-
+let BASE_SERVER_URL = 'http://gruppe-265.developerakademie.net/smallest_backend_ever';
 
 const backend = {
     setItem: function(key, item) {
@@ -22,23 +21,12 @@ window.onload = async function() {
     downloadFromServer();
 }
 
-// async function downloadFromServer() {
-//     let result = await loadJSONFromServer();
-//     console.log(result);
-//     jsonFromServer = JSON.parse(result);
-//     console.log('Loaded', result);
-// }
-
 async function downloadFromServer() {
     let result = await loadJSONFromServer();
     // console.log(result);
     jsonFromServer = JSON.parse(result);
     // console.log('Loaded', jsonFromServer);
 
-}
-
-function setURL(url) {
-    BASE_SERVER_URL = url;
 }
 
 /**
@@ -57,9 +45,6 @@ function loadJSONFromServerOld() {
         let proxy = determineProxySettings();
         let serverURL = proxy + BASE_SERVER_URL + '/nocors.php?json=database&noache=' + (new Date().getTime());
 
-
-
-
         xhttp.open('GET', serverURL);
 
         xhttp.onreadystatechange = function(oEvent) {
@@ -77,10 +62,6 @@ function loadJSONFromServerOld() {
 
     });
 }
-
-
-
-
 
 /**
  * Saves a JSON or JSON Array to the Server
@@ -107,7 +88,6 @@ function saveJSONToServer() {
 
     });
 }
-
 
 function determineProxySettings() {
     return '';

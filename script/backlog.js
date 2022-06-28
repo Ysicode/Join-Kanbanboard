@@ -8,34 +8,18 @@ function closeSingleView() {
     document.getElementById('task_overlay').classList.add('d_none');
 }
 
-function renderBacklockTasks() {
+function renderBacklogTasks() {
     let content = document.getElementById('content_backlog');
     content.innerHTML = '';
     for (let i = tasks.length -1; i >= 0 ; i--) {
         const task = tasks[i];
-        const color = task['urgency'];
-        content.innerHTML += `
-        <div onclick="openSingleView(${i})" id="backlog_row_${i}" class="backlog_rows">
-            <div class="backlog_user">
-                <img class="backlog_user_pic" src="img/${task['user']}.jpg" alt="">
-                <p class="backlog_user_name">${task['user']}</p>
-        </div>
-        <div class="backlog_title">
-            <p class="backlog_task_title">${task['title']}</p>
-        </div>
-        <div class="backlog_category">
-            <p class="backlog_task_category">${task['catagory']}</p>
-        </div>
-        <div class="backlog_details">
-            <p class="backlog_task_details">${task['description']}</p>
-        </div>
-    </div>
-        `;
-        getUrgencyBorderColour(i, color);
+        content.innerHTML += templateRenderBacklogTasks(task,i);
+        getUrgencyBorderColour(task,i);
     }
 }
 
-function getUrgencyBorderColour(i, color) {
+function getUrgencyBorderColour(task,i) {
+    const color = task['urgency'];
     document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
 }
 

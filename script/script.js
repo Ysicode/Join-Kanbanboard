@@ -1,5 +1,3 @@
-setURL('http://gruppe-265.developerakademie.net/smallest_backend_ever');
-
 async function init (page){
     await includeHTML();
     await downloadFromServer();
@@ -19,6 +17,6 @@ function forwardingNextFunctions(page){
         renderTasksAtBoard();
     }
     if(page == 'backlog'){
-        renderBacklockTasks();
+        renderBacklogTasks();
     }
 }
