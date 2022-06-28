@@ -55,4 +55,3 @@ function renderBoards(board) {
 function getTodoBorderLeft(index, color) {
     document.getElementById(`board_task_${index}`).classList.add(`border_${color}`);
 }
-
