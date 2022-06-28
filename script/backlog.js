@@ -17,8 +17,8 @@ function renderBacklockTasks() {
         content.innerHTML += `
         <div onclick="openSingleView(${i})" id="backlog_row_${i}" class="backlog_rows">
             <div class="backlog_user">
-                <img class="backlog_user_pic" src="img/Simon Weiss.jpg" alt="">
-                <p class="backlog_user_name">Simon Weiss</p>
+                <img class="backlog_user_pic" src="img/${task['user']}.jpg" alt="">
+                <p class="backlog_user_name">${task['user']}</p>
         </div>
         <div class="backlog_title">
             <p class="backlog_task_title">${task['title']}</p>

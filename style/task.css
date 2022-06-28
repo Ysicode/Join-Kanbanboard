@@ -68,6 +68,25 @@
     border: none;
     margin-left: 10px;
     cursor: pointer;
-    background-color: rgba(36, 36, 241, 0.74);
+    background-color: #1E3190;
     color: white;
+}
+
+.taskUserImg{
+    object-fit: cover;
+    height: 46px;
+    border-radius: 100%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    opacity: 0.6;
+}
+
+.taskUserImg:hover{
+    opacity: 1;
+}
+
+.taskUserSelected{
+    border-color: #1E3190;
 }
