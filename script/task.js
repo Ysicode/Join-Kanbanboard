@@ -1,9 +1,9 @@
 let tasks = [];
 
-function createTask() {
+async function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);
-    saveTasks();
+    await saveTasks();
     forwardingToBoard();
 }
 
@@ -32,5 +32,5 @@ async function saveTasks() {
 }
 
 function forwardingToBoard(){
-    window.open("board.html");
+    window.open("board.html", "_self");
 }

@@ -11,7 +11,7 @@ function closeSingleView() {
 function renderBacklockTasks() {
     let content = document.getElementById('content_backlog');
     content.innerHTML = '';
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = tasks.length -1; i >= 0 ; i--) {
         const task = tasks[i];
         const color = task['urgency'];
         content.innerHTML += `

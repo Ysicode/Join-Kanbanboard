@@ -18,4 +18,7 @@ function forwardingNextFunctions(page){
     if(page == 'board'){
         renderTasksAtBoard();
     }
+    if(page == 'backlog'){
+        renderBacklockTasks();
+    }
 }
