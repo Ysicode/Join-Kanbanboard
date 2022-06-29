@@ -34,13 +34,36 @@ p {
     overflow-y: auto;
 }
 
+.area_inProgress {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-left: 1px dotted grey;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.area_Done {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-left: 1px dotted grey;
+    border-right: 1px dotted grey;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
 .area_toDo_draganddrop {
     background: #e7e7e7;
 }
 
 .board_task {
-    background: #625f5f12;
-    width: 90%;
+    background: rgb(210 212 224);
+    width: 92%;
     height: 160px;
     margin-bottom: 15px;
     padding: 5px;
@@ -79,18 +102,72 @@ p {
     .content_board {
         flex-wrap: wrap;
         align-items: flex-start;
+        justify-content: center;
+        height: fit-content;
     }
 
     .board_columns {
         height: 40vh;
-        width: 49%;
-        align-items: flex-start;
+        width: 50%;
+        align-items: center;
     }
 
     .board_task {
         background: #00000012;
-        width: 95%;
+        width: 93%;
         padding: 5px;
         cursor: pointer;
     }
+
+    .area_toDo {
+        border-right: 1px dotted grey;
+        border-left: none;
+    }
+
+    .area_Done {
+        border-left: none;
+        border-right: none;
+    }
+
+    .area_inProgress {
+        border-left: none;
+    }
+
+}
+
+@media (max-width: 750px) {
+    
+
+    .board_columns {
+        height: 40vh;
+        width: 95%;
+        align-items: center;
+    }
+
+    .board_task {
+        background: #00000012;
+        width: 93%;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .area_toDo {
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px dotted grey;
+        margin-bottom: 30px;
+    }
+
+    .area_Done {
+        border-left: none;
+        border-right: none;
+        margin-top: 30px;
+    }
+
+    .area_inProgress {
+        border-left: none;
+        border-bottom: 1px dotted grey;
+        margin-bottom: 30px;
+    }
+
 }
