@@ -20,7 +20,7 @@ p {
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
-    width: 24%;
+    width: 25%;
 }
 
 .area_toDo {
@@ -40,7 +40,7 @@ p {
 
 .board_task {
     background: #00000012;
-    width: 94%;
+    width: 90%;
     margin-top: 15px;
     padding: 5px;
     cursor: pointer;
