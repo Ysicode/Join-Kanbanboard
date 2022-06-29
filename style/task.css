@@ -1,11 +1,12 @@
 .addTask {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .addTaskChild {
-    padding: 45px;
+    min-width: 350px;
+    margin: 30px;
 }
 
 .catagoryHeadline {
