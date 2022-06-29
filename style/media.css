@@ -43,3 +43,15 @@
         display: block !important;
     }
 }
+
+@media (max-width: 650px){
+    .navbarMain {
+        flex-direction: column !important;
+    }
+    .mediaNavbarLegal{
+        display: none !important;
+    }
+    .mediaFooterLegal{
+        display: flex !important;
+    }
+}
