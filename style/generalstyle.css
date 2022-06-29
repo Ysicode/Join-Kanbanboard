@@ -44,7 +44,16 @@ h1{
 
 .fontColor {
     color: #1E3190;  /* Beispiel */
-} 
+}
+
+.background_1{
+    background-color: #f3f3f3;
+}
+
+.background_2{
+    background-color: #1E3190;
+}
+
 
 .subHeadlineH1{
     margin-top: 0;
@@ -52,7 +61,6 @@ h1{
 }
 
 .mainArea{
-    background-color: #f3f3f3;
     width: 100%;
     min-height: calc(100vh - 32px);
     padding: 16px;

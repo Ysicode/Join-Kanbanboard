@@ -1,6 +1,5 @@
 .navbarMain{
     height: calc(100% - 32px);
-    background-color: #1E3190;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
