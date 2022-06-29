@@ -30,7 +30,7 @@
 
 <body onload="init('task')">
     <div HTML_Template="templateHTML/navbar.html"></div>
-    <div class="mainArea">
+    <div class="mainArea background_1">
         <div>
             <h1 id="headline">Task.html</h1>
             <p class="subHeadlineH1">Learning Management System Project</p>
@@ -49,7 +49,9 @@
                             <div class="catagoryHeadline">DUE DATE</div>
                             <input required class="userInputDate" type="date" id="date">
                         </div>
+                    </div>
 
+                    <div class="addTask">
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline">CATAGORY</div>
                             <select required class="userCatagoryChoice" id="catagory" placeholder="Select a catagory">
@@ -67,10 +69,13 @@
                                 <option>Low</option>
                             </select>
                         </div>
+                    </div>
 
+                    <div class="addTask">
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline"> DESCRIPTION </div>
-                            <textarea required minlength="5" class="userInput descriptionPadding" type="text" placeholder="Type a description of your task" id="description"></textarea>
+                            <textarea required minlength="5" class="userInput descriptionPadding" type="text"
+                                placeholder="Type a description of your task" id="description"></textarea>
                         </div>
 
                         <div class="addTaskChild fontColor">
@@ -88,6 +93,7 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
     <div HTML_Template="templateHTML/mediaFooter.html"></div>
 </body>
