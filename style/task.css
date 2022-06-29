@@ -1,7 +1,12 @@
 .card {
-    background-color: rgb(210, 212, 224);
+    background-color: rgb(225, 228, 241);
     border-radius: 4px;
     max-width: 70%;
+}
+
+.cardCenter {
+    display: flex;
+    justify-content: center;
 }
 
 .addTask {
