@@ -42,7 +42,6 @@ function renderBoards(board) {
     let content = document.getElementById('tasks_'+board);
     content.innerHTML = '';
     let boardFiltered = tasks.filter(t => t['status'] == board)
-
     for (let i = 0; i < boardFiltered.length; i++) {
         const task = boardFiltered[i];
         let color = task['urgency'];
@@ -54,4 +53,5 @@ function renderBoards(board) {
 
 function getTodoBorderLeft(index, color) {
     document.getElementById(`board_task_${index}`).classList.add(`border_${color}`);
+    document.getElementById(`user_name_board${index}`).classList.add(`color_${color}`)
 }

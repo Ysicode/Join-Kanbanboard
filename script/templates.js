@@ -26,7 +26,7 @@ function templateRenderBoards(index, task) {
     <div ondragstart="startDragging(${index})" draggable="true" id="board_task_${index}" onclick="openSingleView(${index})" class="board_task">
         <p class="board_task_date">${task['date']}</p>
         <p class="board_task_title">${task['title']}</p>
-        <p class="board_task_assigned_name">${task['user']}</p>
+        <p id="user_name_board${index}" class="board_task_assigned_name">${task['user']}</p>
         <div class="board_task_details">
             <p class="details_text">${task['description']}</p>
         </div>

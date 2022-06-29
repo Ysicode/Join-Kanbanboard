@@ -1,3 +1,9 @@
+.card {
+    background-color: rgb(210, 212, 224);
+    border-radius: 4px;
+    max-width: 70%;
+}
+
 .addTask {
     display: flex;
     justify-content: center;
@@ -5,8 +11,11 @@
 }
 
 .addTaskChild {
-    min-width: 350px;
-    margin: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .catagoryHeadline {
@@ -20,6 +29,11 @@
     padding-right: 60px;
     border-radius: 4px;
     border: none;
+}
+
+.descriptionPadding {
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .userCatagoryChoice {
@@ -60,17 +74,27 @@
     margin-right: 10px;
     background: none;
     cursor: pointer;
-    color: rgba(36, 36, 241, 0.74);
+    color: #1E3190;
+    font-weight: bold;
 }
 
 .createbtn {
-    padding: 13px;
+    padding: 12px;
     border-radius: 8px;
     border: none;
     margin-left: 10px;
     cursor: pointer;
     background-color: #1E3190;
     color: white;
+    font-weight: bold;
+}
+
+.createbtn:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn:hover {
+    color: #1f39c0;
 }
 
 .taskUserImg{
