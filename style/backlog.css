@@ -64,7 +64,7 @@ p {
 .backlog_rows {
     height: 100px;
     width: calc(100% - 5px);
-    background: #00000012;
+    background: #e1e4f1;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -73,11 +73,8 @@ p {
     cursor: pointer;
 }
 
-
-
-
 .backlog_rows:hover {
-    background: #00000031;
+    background: #cfd2df;
 }
 
 .backlog_user {

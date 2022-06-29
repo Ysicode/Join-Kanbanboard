@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     display: flex;
     font-family: 'PT Sans';
@@ -6,27 +6,29 @@ body{
     font-weight: 400;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 
-h1{
+h1 {
     margin: 0;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
-.border_Low{
+.border_Low {
     border-left: 5px solid rgb(43, 151, 88);
 }
-.border_Medium{
+
+.border_Medium {
     border-left: 5px solid rgb(255, 196, 0);
 }
-.border_High{
+
+.border_High {
     border-left: 5px solid rgb(255, 60, 0);
 }
 
@@ -43,31 +45,38 @@ h1{
 }
 
 .fontColor {
-    color: #1E3190;  /* Beispiel */
+    color: #1E3190;
+    /* Beispiel */
 }
 
-.background_1{
+.background_1 {
     background-color: #f3f3f3;
 }
 
-.background_2{
+.background_2 {
     background-color: #1E3190;
 }
 
 
-.subHeadlineH1{
+.subHeadlineH1 {
     margin-top: 0;
     font-size: 12px;
 }
 
-.mainArea{
+.mainArea {
     width: 100%;
     min-height: calc(100vh - 32px);
     padding: 16px;
     margin-left: 152px;
 }
 
-.content{
-    margin-top: 5vh;
-    /* height: 85vh; */
+.content {
+    margin-top: 3vh;
+}
+
+@media (max-width: 1000px) {
+
+    .headline {
+        text-align: center;
+    }
 }
