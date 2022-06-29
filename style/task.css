@@ -1,18 +1,11 @@
 .card {
     background-color: rgb(225, 228, 241);
     border-radius: 4px;
-    max-width: 70%;
-}
-
-.cardCenter {
-    display: flex;
-    justify-content: center;
 }
 
 .addTask {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .addTaskChild {
@@ -37,8 +30,13 @@
 }
 
 .descriptionPadding {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 4px;
+    border: none;
+    resize: none;
 }
 
 .userCatagoryChoice {
