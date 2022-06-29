@@ -42,7 +42,9 @@ h1{
     color: rgb(255, 60, 0) !important;
 }
 
-
+.fontColor {
+    color: #1E3190;  /* Beispiel */
+} 
 
 .subHeadlineH1{
     margin-top: 0;
