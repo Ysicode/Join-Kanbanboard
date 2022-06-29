@@ -172,3 +172,9 @@ p {
         height: 60vh;
     }
 }
+
+@media (max-height: 650px) {
+    .board_columns {
+        height: 80vh;
+    }
+}
