@@ -42,3 +42,7 @@
     height: 25px;
     background-color: transparent;
 }
+
+.mediaFooterLegal{
+    display: none;
+}
