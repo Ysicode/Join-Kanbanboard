@@ -31,7 +31,7 @@ p {
     border-left: 1px dotted grey;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .area_toDo_draganddrop {
@@ -39,9 +39,10 @@ p {
 }
 
 .board_task {
-    background: #00000012;
+    background: #625f5f12;
     width: 90%;
-    margin-top: 15px;
+    height: 160px;
+    margin-bottom: 15px;
     padding: 5px;
     cursor: pointer;
 }
@@ -74,27 +75,22 @@ p {
     overflow-y: hidden;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1000px) {
     .content_board {
-flex-direction: column;
-    }
-
-    .board_columns {
-        height: 24%;
-        width: 100%;
+        flex-wrap: wrap;
         align-items: flex-start;
     }
 
-    .area_toDo {
-        flex-direction: row;
+    .board_columns {
+        height: 40vh;
+        width: 49%;
+        align-items: flex-start;
     }
 
     .board_task {
-        height: 90%;
-    /* border-left: 5px solid rgb(236, 79, 79); */
-    background: #00000012;
-    width: 217px;
-    padding: 5px;
-    cursor: pointer;
+        background: #00000012;
+        width: 95%;
+        padding: 5px;
+        cursor: pointer;
     }
 }
