@@ -22,7 +22,6 @@ function getTaskFieldsValue() {
     }else{
         user = users[currentUser]
     }
-
     return {
         'title': title.value,
         'date': date.value,

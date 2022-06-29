@@ -25,6 +25,7 @@
     <script src="script/board.js"></script>
     <script src="script/script.js"></script>
     <script src="script/load.js"></script>
+    <script src="script/backlog.js"></script>
 
     <title>Gruppenarbeit Join 265</title>
 
@@ -32,6 +33,7 @@
 
 <body onload="init('board')">
     <div HTML_Template="templateHTML/navbar.html"></div>
+    <div HTML_Template="templateHTML/taskSingleView.html"></div>
     <div class="mainArea background_1">
         <div class="headline">
             <h1 id="headline">Board</h1>
@@ -42,20 +44,16 @@
                 <div class="board_columns">
                     <h2>TO DO</h2>
                     <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event), addHighlight('todo')" id="tasks_todo" class="area_toDo">
-                     
-                        
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>IN PROGRESS</h2>
-                    <div ondrop="dropTask('in_progress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event), addHighlight('in_progress')" id="tasks_in_progress" class="area_inProgress">
-                        
+                    <div ondrop="dropTask('in_progress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event), addHighlight('in_progress')" id="tasks_in_progress" class="area_inProgress">     
                     </div>
                 </div>
                 <div  class="board_columns">
                     <h2>TESTING</h2>
-                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event), addHighlight('testing')" id="tasks_testing" class="area_toDo">
-                        
+                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event), addHighlight('testing')" id="tasks_testing" class="area_toDo">                      
                     </div>
                 </div>
                 <div class="board_columns">

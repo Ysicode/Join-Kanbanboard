@@ -132,7 +132,7 @@ p {
 }
 
 .area_task_overlay {
-    background: #424141d6;
+    background: #e1e4f1d1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -142,6 +142,8 @@ p {
 .cancel_icon {
     width: clamp(30px, 5px + 5vw, 60px);
     height: clamp(30px, 5px + 5vw, 60px);
+    padding: 10px;
+    background: #cbcedad1;
     border-radius: 100px;
     position: absolute;
     top: 15%;
