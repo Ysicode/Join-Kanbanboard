@@ -14,6 +14,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
+    min-width: 300px;
 }
 
 .catagoryHeadline {
@@ -21,49 +22,33 @@
 }
 
 .userInput {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 60px;
-    padding-right: 60px;
+    height: 45px;
+    width: 300px;
     border-radius: 4px;
     border: none;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
 }
 
-.descriptionPadding {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 60px;
-    padding-right: 60px;
+.userInput::placeholder {
+    text-align: start;
+    padding-left: 5px;
+}
+
+.description {
+    height: 130px;
+    width: 290px;
     border-radius: 4px;
     border: none;
     resize: none;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
 }
 
-.userCatagoryChoice {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 90px;
-    padding-right: 90px;
-    border-radius: 4px;
-    border: none;
-}
-
-.userInputDate {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 85px;
-    padding-right: 85px;
-    border-radius: 4px;
-    border: none;
-}
-
-.userUrgencyChoice {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 105px;
-    padding-right: 105px;
-    border-radius: 4px;
-    border: none;
+textarea {
+    text-align: center;
 }
 
 .btnContainer {
@@ -82,7 +67,7 @@
 }
 
 .createbtn {
-    padding: 12px;
+    padding: 13px;
     border-radius: 8px;
     border: none;
     margin-left: 10px;
@@ -100,7 +85,7 @@
     color: #1f39c0;
 }
 
-.taskUserImg{
+.taskUserImg {
     object-fit: cover;
     height: 46px;
     border-radius: 100%;
@@ -111,10 +96,251 @@
     opacity: 0.6;
 }
 
-.taskUserImg:hover{
+.taskUserImg:hover {
     opacity: 1;
 }
 
-.taskUserSelected{
+.taskUserSelected {
     border-color: #1E3190;
+}
+
+@media (max-width: 744px) {
+    .createbtn {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .cancelbtn {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .userInput {
+        height: 45px;
+        width: 250px;
+    }
+
+    .description {
+        width: 250px;
+    }
+
+    .addTaskChild {
+        min-width: 270px;
+    }
+}
+
+@media (max-width: 670px) {
+    .createbtn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .cancelbtn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .userInput {
+        height: 45px;
+        width: 230px;
+    }
+
+    .description {
+        width: 230px;
+    }
+
+    .addTaskChild {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 615px) { 
+    .createbtn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .cancelbtn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .userInput {
+        height: 45px;
+        width: 210px;
+    }
+
+    .description {
+        width: 210px;
+    }
+
+    .addTaskChild {
+        min-width: 225px;
+    }
+
+    .btnContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 570px) {
+    .userInput {
+        height: 45px;
+        width: 180px;
+    }
+
+    .description {
+        width: 180px;
+    }
+
+    .addTaskChild {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 525px) {
+    .userInput {
+        height: 45px;
+        width: 160px;
+    }
+
+    .description {
+        width: 160px;
+    }
+
+    .addTaskChild {
+        min-width: 175px;
+    }
+
+    .taskUserImg {
+        height: 42px;
+    }
+}
+
+@media (max-width: 470px) {
+    .card {
+        display: flex;
+        justify-content: center;
+    }
+
+    .addTask {
+        display: block;
+    }
+
+    .userInput {
+        height: 45px;
+        width: 300px;
+    }
+
+    .description {
+        width: 300px;
+    }
+
+    .addTaskChild {
+        min-width: 175px;
+    }
+
+    .taskUserImg {
+        height: 42px;
+    }
+
+    .btnContainer {
+        display: block;
+    }
+
+    .createbtn {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .cancelbtn {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+    .userInput {
+        width: 270px;
+    }
+
+    .description {
+        width: 270px;
+    }
+
+    .addTaskChild {
+        min-width: none;
+    }
+
+    .createbtn {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .cancelbtn {
+        padding: 11px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 350px) {
+    .userInput {
+        width: 250px;
+    }
+
+    .description {
+        width: 250px;
+    }
+
+    .createbtn {
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .cancelbtn {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 330px) {
+    .userInput {
+        width: 230px;
+    }
+
+    .description {
+        width: 230px;
+    }
+
+    .createbtn {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .cancelbtn {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 317px) {
+    .userInput {
+        width: 220px;
+    }
+
+    .description {
+        width: 220px;
+    }
+
+    .createbtn {
+        padding: 7px;
+        font-size: 10px;
+    }
+
+    .cancelbtn {
+        padding: 7px;
+        font-size: 10px;
+    }
 }

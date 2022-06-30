@@ -42,19 +42,19 @@
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline">TITLE</div>
                             <input required minlength="2" class="userInput" id="title" type="text"
-                                placeholder="Give your task a title">
+                            placeholder="Give your task a title">
                         </div>
 
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline">DUE DATE</div>
-                            <input required class="userInputDate" type="date" id="date">
+                            <input required class="userInput" type="date" id="date">
                         </div>
                     </div>
 
                     <div class="addTask">
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline">CATAGORY</div>
-                            <select required class="userCatagoryChoice" id="catagory" placeholder="Select a catagory">
+                            <select required class="userInput" id="catagory">
                                 <option>Marketing</option>
                                 <option>Development</option>
                                 <option>Design</option>
@@ -63,7 +63,7 @@
 
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline">URGENCY</div>
-                            <select required class="userUrgencyChoice" id="urgency" placeholder="Select a catagory">
+                            <select required class="userInput" id="urgency">
                                 <option>High</option>
                                 <option>Medium</option>
                                 <option>Low</option>
@@ -74,8 +74,8 @@
                     <div class="addTask">
                         <div class="addTaskChild fontColor">
                             <div class="catagoryHeadline"> DESCRIPTION </div>
-                            <textarea required minlength="5" class="userInput descriptionPadding" type="text"
-                                placeholder="Type a description of your task" id="description"></textarea>
+                            <textarea required minlength="5" class="description" type="text"
+                            placeholder="Type a description of your task" id="description"></textarea>
                         </div>
 
                         <div class="addTaskChild fontColor">
@@ -83,7 +83,7 @@
                             <img id="user_1" onclick="selectUser('1')" class="taskUserImg" src="./img/Simon Weiss.jpg">
                             <img id="user_2" onclick="selectUser('2')" class="taskUserImg"
                                 src="./img/Kevin Schimke.jpg">
-                            <img id="user_3" onclick="selectUser('3')" class="taskUserImg" src="./img/Simon Weiss.jpg">
+                            <img id="user_3" onclick="selectUser('3')" class="taskUserImg" src="./img/Baris Aslan.jpg">
                             <div class="btnContainer">
                                 <button class="cancelbtn" type="reset">CANCEL</button>
                                 <button class="createbtn" type="submit">CREATE TASK</button>
