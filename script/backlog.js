@@ -33,7 +33,7 @@ function renderTaskSingleView(i) {
         <div class="task_overlay">
             <div class="task_overlay_head">
                 <div class="d_flex">
-                <a href="task.html" onclick="return editTask(${i})" <button id="edit_button" class="edit_button">Edit Task</button> ></a>
+                 <button onclick="editTask(${i})" id="edit_button" class="edit_button">Edit Task</button> >
                 <button  onclick="deleteTask(${i})" id="delete_button" class="delete_button">Delete Task</button>
                 </div>
                 <p class="task_overlay_date">${task['date']}</p>
@@ -65,6 +65,23 @@ function deleteTask(i) {
     renderBacklogTasks();
     closeSingleView();
 }
+
+async function editTask(i) {
+    let content = document.getElementById('area_task_overlay');
+    content.innerHTML = '';
+    content.innerHTML = `
+    <div>test </div>
+    `;
+    let title = document.getElementById('title');
+    let date = document.getElementById('date');
+    let urgency = docume.getElementById('urgency');
+    let description = document.getElementById('description');
+    title.value = tasks[i]['title'];
+    date.value = tasks[i]['date'];
+    urgency.value = tasks[i]['urgency'];
+    description.value = tasks[i]['description'];
+}
+
 function geturgencyFontColor(fontcolor) {
     document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
 }
