@@ -9,6 +9,20 @@ async function createTask() {
     forwardingToBoard();
 }
 
+async function editTask(i) {
+    await init('task');
+    alert('allcerbj');
+    console.log('hallo');
+    let title = document.getElementById('title');
+    let date = document.getElementById('date');
+    let urgency = docume.getElementById('urgency');
+    let description = document.getElementById('description');
+    title.value = tasks[i]['title'];
+    date.value = tasks[i]['date'];
+    urgency.value = tasks[i]['urgency'];
+    description.value = tasks[i]['description'];
+}
+
 function getTaskFieldsValue() {
     let title = document.getElementById('title');
     let date = document.getElementById('date');

@@ -11,14 +11,14 @@ function closeSingleView() {
 function renderBacklogTasks() {
     let content = document.getElementById('content_backlog');
     content.innerHTML = '';
-    for (let i = tasks.length -1; i >= 0 ; i--) {
+    for (let i = tasks.length - 1; i >= 0; i--) {
         const task = tasks[i];
-        content.innerHTML += templateRenderBacklogTasks(task,i);
-        getUrgencyBorderColour(task,i);
+        content.innerHTML += templateRenderBacklogTasks(task, i);
+        getUrgencyBorderColour(task, i);
     }
 }
 
-function getUrgencyBorderColour(task,i) {
+function getUrgencyBorderColour(task, i) {
     const color = task['urgency'];
     document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
 }
@@ -32,10 +32,16 @@ function renderTaskSingleView(i) {
     <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
         <div class="task_overlay">
             <div class="task_overlay_head">
+                <div class="d_flex">
+                <a href="task.html" onclick="return editTask(${i})" <button id="edit_button" class="edit_button">Edit Task</button> ></a>
+                <button  onclick="deleteTask(${i})" id="delete_button" class="delete_button">Delete Task</button>
+                </div>
                 <p class="task_overlay_date">${task['date']}</p>
-                <div class="d_flex task_overlay_title_line">
+                <div class="d_flex_column task_overlay_title_line">
                     <p class="task_overlay_title">${task['title']}</p>
-                    <p id="urgency_overlay" class="task_overlay_importance">${task['urgency']}<p class="">Urgency</p> </p>
+                    <div class="d_flex">
+                    <p  class="urgency_overlay">Urgency:</p><p id="urgency_overlay" class="task_overlay_importance">${task['urgency']}</p> 
+                    </div>
                 </div>
                 <div class="task_overlay_user">
                     <img class="task_overlay_userpic" src="img/${task['user']}.jpg" alt="">
@@ -54,6 +60,11 @@ function renderTaskSingleView(i) {
     geturgencyFontColor(fontcolor);
 }
 
+function deleteTask(i) {
+    tasks.splice(i, 1);
+    renderBacklogTasks();
+    closeSingleView();
+}
 function geturgencyFontColor(fontcolor) {
     document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
 }

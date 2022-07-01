@@ -7,17 +7,40 @@
 }
 
 .cancel_icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     padding: 10px;
     background: #cbcedad1;
     border-radius: 100px;
     position: absolute;
-    top: 18%;
+    top: 10%;
     right: 10%;
     cursor: pointer;
     transform: rotate(0deg);
     transition: transform 150ms ease-in-out;
+}
+
+.edit_button {
+    width: fit-content;
+    font-size: 20px;
+    background: #409240e0;
+    border: none;
+    margin-right: 20px;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.delete_button {
+    width: fit-content;
+    font-size: 20px;
+    background: rgb(69 83 93);
+    border: none;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .cancel_icon:hover {
@@ -58,12 +81,12 @@
 }
 
 .task_overlay_importance {
-    font-size: clamp(11px, 2vw, 25px);
-    color: crimson;
+    font-size: clamp(11px, 2vw, 20px);
 }
 
 .urgency_overlay {
-    font-size: clamp(11px, 2vw, 25px);
+    font-size: clamp(11px, 2vw, 20px);
+    margin-right: 10px;
 }
 
 .task_overlay_user {
@@ -73,8 +96,8 @@
 }
 
 .task_overlay_userpic {
-    width: clamp(20px, 2vw, 50px);
-    height: clamp(20px, 2vw, 50px);
+    width: clamp(20px, 3vw, 50px);
+    height: clamp(20px, 3vw, 50px);
     object-fit: contain;
     border-radius: 100px;
     margin-right: 10px;
@@ -146,16 +169,32 @@
         width: 25px;
         height: 25px;
     }
+
+    .delete_button {
+        font-size: 15px;
+    }
+
+    .edit_button {
+        font-size: 15px;
+    }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 600px) {
     .task_overlay {
-        width: 90%;
-        height: 80%;
+        width: 92%;
+        height: 90%;
     }
 
     .cancel_icon {
         top: 8%;
         right: 5%;
+    }
+
+    .task_overlay {
+        padding: 10px;
+    }
+
+    .area_details {
+        padding: 3px 10px 10px 10px;
     }
 }
