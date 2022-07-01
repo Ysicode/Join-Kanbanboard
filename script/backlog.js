@@ -1,7 +1,6 @@
 function openSingleView(i) {
-    console.log(i)
     document.getElementById('task_overlay').classList.remove('d_none');
-    renderTaskSingleView(i);
+    editTask(i);
 }
 
 function closeSingleView() {
@@ -23,63 +22,109 @@ function getUrgencyBorderColour(task, i) {
     document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
 }
 
-function renderTaskSingleView(i) {
-    let content = document.getElementById('task_overlay');
-    content.innerHTML = '';
-    let task = tasks[i];
-    let fontcolor = tasks[i]['urgency'];
-    content.innerHTML += `
-    <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
-        <div class="task_overlay">
-            <div class="task_overlay_head">
-                <div class="d_flex">
-                 <button onclick="editTask(${i})" id="edit_button" class="edit_button">Edit Task</button> >
-                <button  onclick="deleteTask(${i})" id="delete_button" class="delete_button">Delete Task</button>
-                </div>
-                <p class="task_overlay_date">${task['date']}</p>
-                <div class="d_flex_column task_overlay_title_line">
-                    <p class="task_overlay_title">${task['title']}</p>
-                    <div class="d_flex">
-                    <p  class="urgency_overlay">Urgency:</p><p id="urgency_overlay" class="task_overlay_importance">${task['urgency']}</p> 
-                    </div>
-                </div>
-                <div class="task_overlay_user">
-                    <img class="task_overlay_userpic" src="img/${task['user']}.jpg" alt="">
-                    <p class="task_overlay_username">${task['user']}</p>
-                </div>
-            </div>
-            <div class="task_overlay_bottom">
-                <p class="task_overlay_details">DETAILS</p>
-                <div class="area_details">
-                    <span class="area_details_text">${task['description']}
-                    </span>
-                </div>
-            </div>
-        </div>
-    `;
-    geturgencyFontColor(fontcolor);
-}
-
-function deleteTask(i) {
+async function deleteTask(i) {
     tasks.splice(i, 1);
-    renderBacklogTasks();
     closeSingleView();
+    await saveTasks();
+    forwardingNextFunctions(currentPage);
 }
 
-async function editTask(i) {
-    let content = document.getElementById('area_task_overlay');
+function editTask(id) {
+    let content = document.getElementById('task_overlay');
+    let status =  tasks[id]['status'];
     content.innerHTML = '';
     content.innerHTML = `
-    <div>test </div>
+    <div class="card">
+    <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
+                <form onsubmit="event.preventDefault(), createTask()">
+                    <div class="addTask">
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline">TITLE</div>
+                            <input required minlength="2" class="userInput" id="title" type="text"
+                            placeholder="Give your task a title">
+                        </div>
+
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline">DUE DATE</div>
+                            <input required class="userInput" type="date" id="date">
+                        </div>
+                    </div>
+
+                    <div class="addTask">
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline">CATAGORY</div>
+                            <select required class="userInput" id="catagory">
+                                <option>Marketing</option>
+                                <option>Development</option>
+                                <option>Design</option>
+                            </select>
+                        </div>
+
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline">URGENCY</div>
+                            <select required class="userInput" id="urgency">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="addTask">
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline"> DESCRIPTION </div>
+                            <textarea required minlength="5" class="description" type="text"
+                            placeholder="Type a description of your task" id="description"></textarea>
+                        </div>
+
+                        <div class="addTaskChild fontColor">
+                            <div class="catagoryHeadline"> ASSIGNED TO </div>
+                            <img id="user_1" onclick="selectUser('1')" class="taskUserImg" src="./img/Simon Weiss.jpg">
+                            <img id="user_2" onclick="selectUser('2')" class="taskUserImg"
+                                src="./img/Kevin Schimke.jpg">
+                            <img id="user_3" onclick="selectUser('3')" class="taskUserImg" src="./img/Baris Aslan.jpg">
+                            <div class="btnContainer">
+                                <button onclick="deleteTask(${id})" class="cancelbtn" type="reset">DELETE</button>
+                                <button onclick="saveEdit(${id}, ${status})" class="createbtn" type="submit">SAVE EDIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
     `;
+    document.getElementById('title').value = tasks[id]['title'];
+    document.getElementById('date').value =  tasks[id]['date'];
+    document.getElementById('urgency').value = tasks[id]['urgency'];
+    document.getElementById('description').value = tasks[id]['description'];
+}
+
+async function saveEdit(id, status) {
     let title = document.getElementById('title');
     let date = document.getElementById('date');
-    let urgency = docume.getElementById('urgency');
+    let catagory = document.getElementById('catagory');
+    let urgency = document.getElementById('urgency');
     let description = document.getElementById('description');
-    title.value = tasks[i]['title'];
-    date.value = tasks[i]['date'];
-    urgency.value = tasks[i]['urgency'];
-    description.value = tasks[i]['description'];
+    let user;
+    if(currentUser == 'Gast') {
+        user = users[0];
+    }else{
+        user = users[currentUser]
+    }
+let task = {
+    'title': title.value,
+   'date': date.value,
+    'category': catagory.value,
+    'urgenncy': urgency.value,
+    'description': description.value,
+    'user': user,
+    'id': id,
+    'status': status
+}
+tasks.splice(0, 1);
+  tasks.push(task);
+    closeSingleView();
+    await createTask();
+
 }
 
 function geturgencyFontColor(fontcolor) {

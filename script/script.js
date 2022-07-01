@@ -1,4 +1,7 @@
+let currentPage;
+
 async function init (page){
+    currentPage = page;
     await includeHTML();
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks'))|| [];
