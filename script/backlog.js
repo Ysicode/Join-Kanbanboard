@@ -22,31 +22,36 @@ function getUrgencyBorderColour(task, i) {
     document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
 }
 
+function geturgencyFontColor(fontcolor) {
+    document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
+}
+
 function editTask(id) {
     let content = document.getElementById('task_overlay');
     content.innerHTML = '';
     content.innerHTML = templateEditTask(id);
+    loadInfosEditTask(id);
+}
 
+function loadInfosEditTask(id){
     document.getElementById('title').value = tasks[id]['title'];
     document.getElementById('date').value =  tasks[id]['date'];
     document.getElementById('urgency').value = tasks[id]['urgency'];
     document.getElementById('description').value = tasks[id]['description'];
 }
 
-function geturgencyFontColor(fontcolor) {
-    document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
+async function saveEdit(id) {
+    overwriteInfosEditTask(id);
+    await saveTasks();
+    reloadBacklog();
 }
 
-async function saveEdit(id) {
-
+function overwriteInfosEditTask(id){
     tasks[id]['title'] = document.getElementById('title').value
     tasks[id]['date'] = document.getElementById('date').value
     tasks[id]['category'] = document.getElementById('catagory').value
     tasks[id]['urgency'] = document.getElementById('urgency').value
     tasks[id]['description'] = document.getElementById('description').value
-
-    await saveTasks();
-    reloadBacklog();
 }
 
 async function deleteTask(i) { 
