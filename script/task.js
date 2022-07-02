@@ -1,7 +1,3 @@
-let tasks = [];
-let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
-let currentUser = 'Gast';
-
 async function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);
@@ -34,10 +30,7 @@ function getTaskFieldsValue() {
     }
 }
 
-async function saveTasks() {
-    let taskAsString = JSON.stringify(tasks);
-    await backend.setItem('tasks', taskAsString);
-}
+
 
 function forwardingToBoard() {
     window.open("board.html", "_self");

@@ -1,4 +1,7 @@
 let currentPage;
+let tasks = [];
+let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
+let currentUser = 'Gast';
 
 async function init (page){
     currentPage = page;
@@ -22,4 +25,9 @@ function forwardingNextFunctions(page){
     if(page == 'backlog'){
         renderBacklogTasks();
     }
+}
+
+async function saveTasks() {
+    let taskAsString = JSON.stringify(tasks);
+    await backend.setItem('tasks', taskAsString);
 }
