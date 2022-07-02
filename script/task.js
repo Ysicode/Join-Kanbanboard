@@ -1,6 +1,10 @@
 let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
 let currentUser = 'Gast';
 
+/**
+ * This function is used to create a task
+ * 
+ */
 async function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);
@@ -8,6 +12,11 @@ async function createTask() {
     forwardingToBoard();
 }
 
+/**
+ * This function gets the value of the input the current user is typing
+ * 
+ * @returns - The value in JSON
+ */
 function getTaskFieldsValue() {
     let title = document.getElementById('title');
     let date = document.getElementById('date');
@@ -33,12 +42,19 @@ function getTaskFieldsValue() {
     }
 }
 
-
-
+/**
+ * This function is used to open the board.html
+ * 
+ */
 function forwardingToBoard() {
     window.open("board.html", "_self");
 }
 
+/**
+ * This function used add a class to the current user
+ * 
+ * @param {string} userID - This is the current user
+ */
 function selectUser(userID) {
     if (currentUser == 'Gast') {
         currentUser = userID;
