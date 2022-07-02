@@ -1,4 +1,10 @@
-// Templates for backlog.js
+/**
+ * Template for the backlog
+ * 
+ * @param {*} task - This is a task
+ * @param {*} i - 
+ * @returns 
+ */
 function templateRenderBacklogTasks(task, i) {
     return /*html*/`
     <div onclick="openSingleView(${i})" id="backlog_row_${i}" class="backlog_rows">
@@ -19,6 +25,12 @@ function templateRenderBacklogTasks(task, i) {
     `
 }
 
+/**
+ * Template for the editTask function
+ * 
+ * @param {*} id 
+ * @returns 
+ */
 function templateEditTask(id) {
     return /*html*/`
     <div class="card">
@@ -68,8 +80,13 @@ function templateEditTask(id) {
     </div>
 `
 }
-// Templates for board.js
-
+/**
+ * Template for the board
+ * 
+ * @param {*} index 
+ * @param {*} task - This is a task
+ * @returns 
+ */
 function templateRenderBoards(index, task) {
     return /*html*/`
     <div ondragstart="startDragging(${index})" draggable="true" id="board_task_${index}" class="board_task">

@@ -1,3 +1,7 @@
+/**
+ * This function allows to use html templates
+ * 
+ */
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[HTML_Template]');
     for (let i = 0; i < includeElements.length; i++) {
