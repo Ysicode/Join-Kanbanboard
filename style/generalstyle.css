@@ -14,6 +14,7 @@ a {
 
 h1 {
     margin: 0;
+    word-break: break-all;
 }
 
 .d-none {
@@ -46,7 +47,6 @@ h1 {
 
 .fontColor {
     color: #1E3190;
-    /* Beispiel */
 }
 
 .background_1 {

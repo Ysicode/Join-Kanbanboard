@@ -1,3 +1,6 @@
+let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
+let currentUser = 'Gast';
+
 async function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);

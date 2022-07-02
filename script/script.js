@@ -1,7 +1,5 @@
 let currentPage;
 let tasks = [];
-let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
-let currentUser = 'Gast';
 
 async function init (page){
     currentPage = page;
