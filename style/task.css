@@ -1,6 +1,5 @@
 .card {
     background-color: rgb(225, 228, 241);
-    border-radius: 4px;
 }
 
 .addTask {
@@ -14,18 +13,20 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
-    min-width: 300px;
+    width: 300px;
 }
 
 .catagoryHeadline {
     margin-bottom: 10px;
+    font-size: 17px;
 }
 
 .userInput {
-    height: 45px;
     width: 300px;
     border-radius: 4px;
     border: none;
+    padding: 10px 10px 10px 10px;
+    font-size: 17px;
     font-family: 'PT Sans';
     font-style: normal;
     font-weight: 400;
@@ -38,8 +39,10 @@
 
 .description {
     height: 130px;
-    width: 290px;
+    width: 300px;
+    font-size: 17px;
     border-radius: 4px;
+    padding: 10px;
     border: none;
     resize: none;
     font-family: 'PT Sans';
@@ -48,16 +51,17 @@
 }
 
 textarea {
-    text-align: center;
+    text-align: flex-start;
 }
 
 .btnContainer {
     margin-top: 20px;
-    padding-left: 60px;
+    display: flex;
+    width: 100%;
 }
 
 .cancelbtn {
-    padding: 13px;
+    font-size: 17px;
     border: none;
     margin-right: 10px;
     background: none;
@@ -68,6 +72,7 @@ textarea {
 
 .createbtn {
     padding: 13px;
+    font-size: 17px;
     border-radius: 8px;
     border: none;
     margin-left: 10px;
