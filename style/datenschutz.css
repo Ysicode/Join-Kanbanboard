@@ -1,3 +1,7 @@
 .scroll_y{
     overflow-y: auto;
 }
+
+.breakwords{
+    word-break: break-all;
+}
