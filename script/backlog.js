@@ -105,8 +105,20 @@ function overwriteInfosEditTask(id){
  */
 async function deleteTask(i) { 
     tasks.splice(i, 1);
+    setNewIdForEachTask();
     await saveTasks();
     reloadBacklog();
+}
+
+/**
+ * This function is used to set task id to its position of tasks array if its not empty
+ */
+function setNewIdForEachTask() {
+    if (tasks.length != 0) {
+        for (let i = 0; i <= tasks.length; i++) {
+            tasks[i]['id'] = i;
+        }
+    }
 }
 
 /**
