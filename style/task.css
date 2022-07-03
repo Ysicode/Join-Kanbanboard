@@ -102,6 +102,7 @@ textarea {
 
 .taskUserSelected {
     border-color: #1E3190;
+    opacity: 1;
 }
 
 @media (max-width: 744px) {
