@@ -57,7 +57,6 @@ h1 {
     background-color: #1E3190;
 }
 
-
 .subHeadlineH1 {
     margin-top: 0;
     font-size: 12px;
@@ -75,7 +74,6 @@ h1 {
 }
 
 @media (max-width: 1000px) {
-
     .headline {
         text-align: center;
     }

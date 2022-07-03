@@ -1,7 +1,7 @@
 /**
  * This function is used to open a task in a single view
  * 
- * @param {*} i - This is the task which is opened
+ * @param {number} i - This parameter is the position at the tasks array
  */
 function openSingleView(i) {
     document.getElementById('task_overlay').classList.remove('d_none');
@@ -17,7 +17,7 @@ function closeSingleView() {
 }
 
 /**
- * This function is used to render the tasks in the backlog
+ * This function is used to render the tasks of the backlog
  * 
  */
 function renderBacklogTasks() {
@@ -33,8 +33,8 @@ function renderBacklogTasks() {
 /**
  * This function is used to get the border color for each urgency
  * 
- * @param {*} task - This is a task
- * @param {*} i - This is the task at the point i
+ * @param {object} task - This parameter is a task object at position i
+ * @param {number} i - This parameter is the position at the tasks array
  */
 function getUrgencyBorderColour(task, i) {
     const color = task['urgency'];
@@ -44,7 +44,7 @@ function getUrgencyBorderColour(task, i) {
 /**
  * This function is used to get the font color for each urgency
  * 
- * @param {*} fontcolor - This is the fontcolor
+ * @param {string} fontcolor - This is the fontcolor
  */
 function geturgencyFontColor(fontcolor) {
     document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
@@ -53,7 +53,7 @@ function geturgencyFontColor(fontcolor) {
 /**
  * This function is used to edit a task which is already in the backlog and board
  * 
- * @param {string} id - 
+ * @param {string} id - This parameter is the position at the tasks array
  */
 function editTask(id) {
     let content = document.getElementById('task_overlay');
@@ -65,7 +65,7 @@ function editTask(id) {
 /**
  * This function is used to load all details which are in each task
  * 
- * @param {*} id - This is the task
+ * @param {number} id - This parameter is the position at the tasks array
  */
 function loadInfosEditTask(id){
     document.getElementById('title').value = tasks[id]['title'];
@@ -77,7 +77,7 @@ function loadInfosEditTask(id){
 /**
  * This function is used to save the edit the user made to a task
  * 
- * @param {*} id - This is the task
+ * @param {number} id - This parameter is the position at the tasks array
  */
 async function saveEdit(id) {
     overwriteInfosEditTask(id);
@@ -88,7 +88,7 @@ async function saveEdit(id) {
 /**
  * This function is used to overwrite all infos with the current edit
  * 
- * @param {*} id - This is the task
+ * @param {number} id - This parameter is the position at the tasks array
  */
 function overwriteInfosEditTask(id){
     tasks[id]['title'] = document.getElementById('title').value
@@ -101,7 +101,7 @@ function overwriteInfosEditTask(id){
 /**
  * This function is used to delete a task
  * 
- * @param {*} i - This is the task at point i
+ * @param {number} i - This parameter is the position at the tasks array
  */
 async function deleteTask(i) { 
     tasks.splice(i, 1);

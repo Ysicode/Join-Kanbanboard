@@ -4,7 +4,7 @@ let tasks = [];
 /**
  * This function is used to initialize
  * 
- * @param {*} page - This is the current page
+ * @param {string} page - This parameter is the current selected html page
  */
 async function init (page){
     currentPage = page;
@@ -18,7 +18,7 @@ async function init (page){
 /**
  * 
  * This function is used to show the navbar
- * @param {*} page - This is the current page
+ * @param {string} page - This parameter is the current selected html page
  */
 function navbarSelection(page){
     if(page != 'index'){
@@ -29,7 +29,7 @@ function navbarSelection(page){
 /**
  * This function is used to render the board or the backlog if one of them is opened
  * 
- * @param {*} page 
+ * @param {string} page - This parameter is the current selected html page
  */
 function forwardingNextFunctions(page){
     if(page == 'board'){

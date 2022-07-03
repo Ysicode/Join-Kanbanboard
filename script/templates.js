@@ -1,8 +1,8 @@
 /**
- * Template for the backlog
+ * Template for the document backlog.js and function renderBacklogTasks()
  * 
- * @param {*} task - This is a task
- * @param {*} i - 
+ * @param {object} task - This parameter is the object at position i of the tasks array
+ * @param {number} i - This parameter is the position at the tasks array
  * @returns 
  */
 function templateRenderBacklogTasks(task, i) {
@@ -26,9 +26,9 @@ function templateRenderBacklogTasks(task, i) {
 }
 
 /**
- * Template for the editTask function
+ * Template for the document backlog.js and function editTask()
  * 
- * @param {*} id 
+ * @param {number} id - This parameter is the position at the tasks array
  * @returns 
  */
 function templateEditTask(id) {
@@ -81,10 +81,10 @@ function templateEditTask(id) {
 `
 }
 /**
- * Template for the board
+ * Template for the document board.js and function renderBoards()
  * 
- * @param {*} index 
- * @param {*} task - This is a task
+ * @param {number} index - This parameter is the position at the tasks array
+ * @param {object} task - This parameter is the object at position i of the tasks array
  * @returns 
  */
 function templateRenderBoards(index, task) {

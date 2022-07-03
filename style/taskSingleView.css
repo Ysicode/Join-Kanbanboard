@@ -20,7 +20,6 @@
     transition: transform 150ms ease-in-out;
 }
 
-
 @media (max-width: 1000px) {
     .cancel_icon {
         top: 3%;

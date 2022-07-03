@@ -3,7 +3,7 @@ let currentDraggedElement;
 /**
  * This function allows to drop a dragged element
  * 
- * @param {*} ev -
+ * @param {*} ev - This parameter is the event
  */
 function allowDrop(ev) {
     ev.preventDefault();
@@ -12,7 +12,7 @@ function allowDrop(ev) {
 /**
  * This function allows to drag an element 
  * 
- * @param {*} index - This is the task which is getting dragged 
+ * @param {number} index - This parameter is the position at the tasks array
  */
 function startDragging(index) {
     currentDraggedElement = index;
@@ -21,7 +21,7 @@ function startDragging(index) {
 /**
  * This function is used to drop a task
  * 
- * @param {*} newStatus 
+ * @param {string} newStatus - This parameter is the new Status of the dragged and dropped object
  */
 function dropTask(newStatus) {
     tasks[currentDraggedElement]['status'] = newStatus;
@@ -45,7 +45,7 @@ async function endMoveToOtherBoard(){
 /**
  * This function adds a highlight to the board in which the task is dragged
  * 
- * @param {*} overColumn -
+ * @param {string} overColumn - This parameter is the hovered column at board
  */
 function addHighlight(overColumn) {
     document.getElementById('tasks_'+`${overColumn}`).classList.add('area_toDo_draganddrop');
@@ -54,7 +54,7 @@ function addHighlight(overColumn) {
 /**
  * This function removes the highlight after task is dropped
  * 
- * @param {*} besideColumn -
+ * @param {string} besideColumn - This parameter was the hovered column at board
  */
 function removeHighlight(besideColumn) {
     document.getElementById('tasks_'+`${besideColumn}`).classList.remove('area_toDo_draganddrop');
@@ -74,7 +74,7 @@ function renderTasksAtBoard() {
 /**
  * This function is used to render the board
  * 
- * @param {*} board 
+ * @param {string} board - This parameter is the column at board
  */
 function renderBoards(board) {
     let content = document.getElementById('tasks_'+board);
@@ -90,10 +90,10 @@ function renderBoards(board) {
 }
 
 /**
+ * This function is used to set the border with different colors depeneding on urgency
  * 
- * 
- * @param {*} index 
- * @param {*} color 
+ * @param {number} index - This parameter is the position of the array tasks
+ * @param {string} color - This paramater is the color
  */
 function getTodoBorderLeft(index, color) {
     document.getElementById(`board_task_${index}`).classList.add(`border_${color}`);
