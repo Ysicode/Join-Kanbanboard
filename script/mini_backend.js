@@ -26,7 +26,6 @@ async function downloadFromServer() {
     // console.log(result);
     jsonFromServer = JSON.parse(result);
     // console.log('Loaded', jsonFromServer);
-
 }
 
 /**

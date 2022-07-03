@@ -42,6 +42,7 @@ p {
 .columns_titles {
     font-size: clamp(13px, 1px + 2vw, 22px);
     color: #1f3190;
+    font-weight: bold;
 }
 
 .column_assignedTo {

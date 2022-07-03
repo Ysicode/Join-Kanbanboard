@@ -1,5 +1,7 @@
 .card {
     background-color: rgb(225, 228, 241);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .addTask {
@@ -8,12 +10,12 @@
 }
 
 .addTaskChild {
-    margin-left: 30px;
+    margin-left: 10px;
     margin-right: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
-    width: 300px;
+    width: 40%;
 }
 
 .catagoryHeadline {
@@ -22,14 +24,23 @@
 }
 
 .userInput {
-    width: 300px;
+    height: 45px;
+    width: 100%;
     border-radius: 4px;
     border: none;
     padding: 10px 10px 10px 10px;
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'PT Sans';
-    font-style: normal;
-    font-weight: 400;
+}
+
+.userSelect {
+    width: calc(100% + 20px);
+    height: 65px;
+    border-radius: 4px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    font-family: 'PT Sans';
 }
 
 .userInput::placeholder {
@@ -38,9 +49,9 @@
 }
 
 .description {
-    height: 130px;
-    width: 300px;
-    font-size: 17px;
+    height: 230px;
+    width: 100%;
+    font-size: 20px;
     border-radius: 4px;
     padding: 10px;
     border: none;
@@ -55,7 +66,7 @@ textarea {
 }
 
 .btnContainer {
-    margin-top: 20px;
+    margin-top: 45px;
     display: flex;
     width: 100%;
 }
@@ -63,7 +74,6 @@ textarea {
 .cancelbtn {
     font-size: 17px;
     border: none;
-    margin-right: 10px;
     background: none;
     cursor: pointer;
     color: #1E3190;
@@ -73,9 +83,9 @@ textarea {
 .createbtn {
     padding: 13px;
     font-size: 17px;
-    border-radius: 8px;
+    border-radius: 4px;
     border: none;
-    margin-left: 10px;
+    margin-right: 20px;
     cursor: pointer;
     background-color: #1E3190;
     color: white;
@@ -92,7 +102,7 @@ textarea {
 
 .taskUserImg {
     object-fit: cover;
-    height: 46px;
+    height: 50px;
     border-radius: 100%;
     border: 3px solid transparent;
     cursor: pointer;
@@ -110,243 +120,28 @@ textarea {
     opacity: 1;
 }
 
-@media (max-width: 744px) {
-    .createbtn {
-        padding: 9px;
-        font-size: 13px;
-    }
-
-    .cancelbtn {
-        padding: 9px;
-        font-size: 13px;
-    }
-
-    .userInput {
-        height: 45px;
-        width: 250px;
-    }
-
-    .description {
-        width: 250px;
-    }
-
-    .addTaskChild {
-        min-width: 270px;
-    }
-}
-
-@media (max-width: 670px) {
-    .createbtn {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    .cancelbtn {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    .userInput {
-        height: 45px;
-        width: 230px;
-    }
-
-    .description {
-        width: 230px;
-    }
-
-    .addTaskChild {
-        min-width: 250px;
-    }
-}
-
-@media (max-width: 615px) { 
-    .createbtn {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    .cancelbtn {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    .userInput {
-        height: 45px;
-        width: 210px;
-    }
-
-    .description {
-        width: 210px;
-    }
-
-    .addTaskChild {
-        min-width: 225px;
-    }
-
-    .btnContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 570px) {
-    .userInput {
-        height: 45px;
-        width: 180px;
-    }
-
-    .description {
-        width: 180px;
-    }
-
-    .addTaskChild {
-        min-width: 200px;
-    }
-}
-
-@media (max-width: 525px) {
-    .userInput {
-        height: 45px;
-        width: 160px;
-    }
-
-    .description {
-        width: 160px;
-    }
-
-    .addTaskChild {
-        min-width: 175px;
-    }
-
-    .taskUserImg {
-        height: 42px;
-    }
-}
-
-@media (max-width: 470px) {
-    .card {
+@media (max-width: 1000px) {
+    .addTask {
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
+    .addTaskChild {
+        width: 70%;
+    }
+}
+
+@media (max-width: 650px) {
     .addTask {
-        display: block;
-    }
-
-    .userInput {
-        height: 45px;
-        width: 300px;
-    }
-
-    .description {
-        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .addTaskChild {
-        min-width: 175px;
-    }
-
-    .taskUserImg {
-        height: 42px;
-    }
-
-    .btnContainer {
-        display: block;
-    }
-
-    .createbtn {
-        padding: 12px;
-        font-size: 13px;
-    }
-
-    .cancelbtn {
-        padding: 12px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 380px) {
-    .userInput {
-        width: 270px;
-    }
-
-    .description {
-        width: 270px;
-    }
-
-    .addTaskChild {
-        min-width: none;
-    }
-
-    .createbtn {
-        padding: 11px;
-        font-size: 13px;
-    }
-
-    .cancelbtn {
-        padding: 11px;
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 350px) {
-    .userInput {
-        width: 250px;
-    }
-
-    .description {
-        width: 250px;
-    }
-
-    .createbtn {
-        padding: 9px;
-        font-size: 12px;
-    }
-
-    .cancelbtn {
-        padding: 9px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 330px) {
-    .userInput {
-        width: 230px;
-    }
-
-    .description {
-        width: 230px;
-    }
-
-    .createbtn {
-        padding: 8px;
-        font-size: 10px;
-    }
-
-    .cancelbtn {
-        padding: 8px;
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 317px) {
-    .userInput {
-        width: 220px;
-    }
-
-    .description {
-        width: 220px;
-    }
-
-    .createbtn {
-        padding: 7px;
-        font-size: 10px;
-    }
-
-    .cancelbtn {
-        padding: 7px;
-        font-size: 10px;
+        width: 90%;
     }
 }
