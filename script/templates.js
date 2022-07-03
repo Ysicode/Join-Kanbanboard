@@ -49,7 +49,7 @@ function templateEditTask(id) {
                 <div class="addTask">
                     <div class="addTaskChild fontColor">
                         <div class="catagoryHeadline">CATAGORY</div>
-                        <select required class="userInput" id="catagory">
+                        <select required class="userSelect" id="catagory">
                             <option>Marketing</option>
                             <option>Development</option>
                             <option>Design</option>
@@ -57,7 +57,7 @@ function templateEditTask(id) {
                     </div>
                     <div class="addTaskChild fontColor">
                         <div class="catagoryHeadline">URGENCY</div>
-                        <select required class="userInput" id="urgency">
+                        <select required class="userSelect" id="urgency">
                             <option>High</option>
                             <option>Medium</option>
                             <option>Low</option>

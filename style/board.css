@@ -1,5 +1,6 @@
 h2 {
     color: #1f3190;
+    font-size: 20px;
 }
 
 p {
@@ -169,6 +170,14 @@ p {
 @media (max-height: 1000px) {
     .board_columns {
         height: 60vh;
+    }
+
+    .board_task_date, .board_task_assigned_name {
+        font-size: 13px;
+    }
+
+    .board_task_title, .details_text {
+        font-size: 15px;
     }
 }
 

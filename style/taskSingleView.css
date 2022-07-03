@@ -10,7 +10,7 @@
     width: 35px;
     height: 35px;
     padding: 10px;
-    background: #cbcedad1;
+    background: #1f3190;;
     border-radius: 100px;
     position: absolute;
     top: 10%;
@@ -20,146 +20,14 @@
     transition: transform 150ms ease-in-out;
 }
 
-.edit_button {
-    width: fit-content;
-    font-size: 20px;
-    background: #409240e0;
-    border: none;
-    margin-right: 20px;
-    padding: 5px 10px 5px 10px;
-    color: white;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.delete_button {
-    width: fit-content;
-    font-size: 20px;
-    background: rgb(69 83 93);
-    border: none;
-    padding: 5px 10px 5px 10px;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.cancel_icon:hover {
-    transform: rotate(180deg);
-}
-
-.task_overlay {
-    background: #f3f3f3;
-    width: 80%;
-    height: 50%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.task_overlay_head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.task_overlay_date {
-    font-size: clamp(11px, 2vw, 25px);
-}
-
-.task_overlay_title_line {
-    margin-top: 4vh;
-    margin-bottom: 2vh;
-}
-
-.task_overlay_title {
-    font-size: clamp(15px, 2vw, 35px);
-    margin-right: 30px;
-}
-
-.task_overlay_importance {
-    font-size: clamp(11px, 2vw, 20px);
-}
-
-.urgency_overlay {
-    font-size: clamp(11px, 2vw, 20px);
-    margin-right: 10px;
-}
-
-.task_overlay_user {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.task_overlay_userpic {
-    width: clamp(20px, 3vw, 50px);
-    height: clamp(20px, 3vw, 50px);
-    object-fit: contain;
-    border-radius: 100px;
-    margin-right: 10px;
-}
-
-.task_overlay_username {
-    font-size: clamp(13px, 2vw, 30px);
-}
-
-.task_overlay_bottom {
-    height: 60%;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.task_overlay_details {
-    font-size: clamp(13px, 2vw, 30px);
-}
-
-.area_details {
-    height: 100%;
-    padding: 10px;
-    overflow-y: scroll;
-}
-
-.area_details_text {
-    font-size: clamp(13px, 2vw, 25px)
-}
 
 @media (max-width: 1000px) {
-    .task_overlay {
-        width: 90%;
-        height: 70%;
-    }
-
-    .task_overlay_title_line {
-        margin-top: 1vh;
-    margin-bottom: 2vh;
-    }
-
-    .task_overlay_bottom {
-        height: 70%;
-    }
-
     .cancel_icon {
         top: 3%;
-    }
-
-    .cancel_icon {
-        width: 25px;
-        height: 25px;
     }
 }
 
 @media (max-height: 1000px) {
-    .task_overlay {
-        width: 90%;
-        height: 70%;
-    }
 
     .cancel_icon {
         top: 3%;
@@ -169,32 +37,12 @@
         width: 25px;
         height: 25px;
     }
-
-    .delete_button {
-        font-size: 15px;
-    }
-
-    .edit_button {
-        font-size: 15px;
-    }
 }
 
 @media (max-height: 600px) {
-    .task_overlay {
-        width: 92%;
-        height: 90%;
-    }
 
     .cancel_icon {
         top: 8%;
         right: 5%;
-    }
-
-    .task_overlay {
-        padding: 10px;
-    }
-
-    .area_details {
-        padding: 3px 10px 10px 10px;
     }
 }
