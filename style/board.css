@@ -91,7 +91,6 @@ p {
 .details_text {
     font-size: 15px;
     overflow-wrap: anywhere;
-    color: #616A6B;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -178,6 +177,10 @@ p {
 
     .board_task_title, .details_text {
         font-size: 15px;
+    }
+
+    h2 {
+        font-size: 17px;
     }
 }
 
