@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: templates.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: templates.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Template for the document backlog.js and function renderBacklogTasks()
+ * 
+ * @param {object} task - This parameter is the object at position i of the tasks array
+ * @param {number} i - This parameter is the position at the tasks array
+ * @returns 
+ */
+function templateRenderBacklogTasks(task, i) {
+    return /*html*/`
+    &lt;div onclick="openSingleView(${i})" id="backlog_row_${i}" class="backlog_rows">
+        &lt;div class="backlog_user">
+            &lt;img class="backlog_user_pic" src="img/${task['user']}.jpg" alt="">
+            &lt;p class="backlog_user_name">${task['user']}&lt;/p>
+    &lt;/div>
+    &lt;div class="backlog_title">
+        &lt;p class="backlog_task_title">${task['title']}&lt;/p>
+    &lt;/div>
+    &lt;div class="backlog_category">
+        &lt;p class="backlog_task_category">${task['catagory']}&lt;/p>
+    &lt;/div>
+    &lt;div class="backlog_details">
+        &lt;p class="backlog_task_details">${task['description']}&lt;/p>
+    &lt;/div>
+&lt;/div>
+    `
+}
+
+/**
+ * Template for the document backlog.js and function editTask()
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ * @returns 
+ */
+function templateEditTask(id) {
+    return /*html*/`
+    &lt;div class="card">
+        &lt;img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
+            &lt;form onsubmit="event.preventDefault(), saveEdit(${id})">
+                &lt;div class="addTask">
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="catagoryHeadline">TITLE&lt;/div>
+                        &lt;input required minlength="2" class="userInput" id="title" type="text" placeholder="Give your task a title">
+                    &lt;/div>
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="catagoryHeadline">DUE DATE&lt;/div>
+                        &lt;input required class="userInput" type="date" id="date">
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="addTask">
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="catagoryHeadline">CATAGORY&lt;/div>
+                        &lt;select required class="userSelect" id="catagory">
+                            &lt;option>Marketing&lt;/option>
+                            &lt;option>Development&lt;/option>
+                            &lt;option>Design&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="catagoryHeadline">URGENCY&lt;/div>
+                        &lt;select required class="userSelect" id="urgency">
+                            &lt;option>High&lt;/option>
+                            &lt;option>Medium&lt;/option>
+                            &lt;option>Low&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="addTask">
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="catagoryHeadline"> DESCRIPTION &lt;/div>
+                        &lt;textarea required minlength="5" class="description" type="text" placeholder="Type a description of your task" id="description">&lt;/textarea>
+                    &lt;/div>
+                    &lt;div class="addTaskChild fontColor">
+                        &lt;div class="btnContainer">
+                            &lt;button onclick="deleteTask(${id})" class="createbtn" type="submit">Delete&lt;/button>
+                            &lt;button class="createbtn" type="submit">SAVE EDIT&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/form>
+    &lt;/div>
+`
+}
+/**
+ * Template for the document board.js and function renderBoards()
+ * 
+ * @param {number} index - This parameter is the position at the tasks array
+ * @param {object} task - This parameter is the object at position i of the tasks array
+ * @returns 
+ */
+function templateRenderBoards(index, task) {
+    return /*html*/`
+    &lt;div ondragstart="startDragging(${index})" draggable="true" id="board_task_${index}" class="board_task">
+        &lt;p class="board_task_date">${task['date']}&lt;/p>
+        &lt;p class="board_task_title">${task['title']}&lt;/p>
+        &lt;p id="user_name_board${index}" class="board_task_assigned_name">${task['user']}&lt;/p>
+        &lt;div class="board_task_details">
+            &lt;p class="details_text">${task['description']}&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    `
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addHighlight">addHighlight</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeSingleView">closeSingleView</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#dropTask">dropTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#endMoveToOtherBoard">endMoveToOtherBoard</a></li><li><a href="global.html#forwardingNextFunctions">forwardingNextFunctions</a></li><li><a href="global.html#forwardingToBoard">forwardingToBoard</a></li><li><a href="global.html#getTaskFieldsValue">getTaskFieldsValue</a></li><li><a href="global.html#getTodoBorderLeft">getTodoBorderLeft</a></li><li><a href="global.html#getUrgencyBorderColour">getUrgencyBorderColour</a></li><li><a href="global.html#geturgencyFontColor">geturgencyFontColor</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadInfosEditTask">loadInfosEditTask</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#navbarSelection">navbarSelection</a></li><li><a href="global.html#openSingleView">openSingleView</a></li><li><a href="global.html#overwriteInfosEditTask">overwriteInfosEditTask</a></li><li><a href="global.html#reloadBacklog">reloadBacklog</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderBacklogTasks">renderBacklogTasks</a></li><li><a href="global.html#renderBoards">renderBoards</a></li><li><a href="global.html#renderTasksAtBoard">renderTasksAtBoard</a></li><li><a href="global.html#saveEdit">saveEdit</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveTasks">saveTasks</a></li><li><a href="global.html#selectUser">selectUser</a></li><li><a href="global.html#setNewIdForEachTask">setNewIdForEachTask</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateRenderBacklogTasks">templateRenderBacklogTasks</a></li><li><a href="global.html#templateRenderBoards">templateRenderBoards</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 03 2022 21:01:52 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

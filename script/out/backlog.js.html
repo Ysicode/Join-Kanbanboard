@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: backlog.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: backlog.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This function is used to open a task in a single view
+ * 
+ * @param {number} i - This parameter is the position at the tasks array
+ */
+function openSingleView(i) {
+    document.getElementById('task_overlay').classList.remove('d_none');
+    editTask(i);
+}
+
+/**
+ * This function is used to close the single view of a task
+ * 
+ */
+function closeSingleView() {
+    document.getElementById('task_overlay').classList.add('d_none');
+}
+
+/**
+ * This function is used to render the tasks of the backlog
+ * 
+ */
+function renderBacklogTasks() {
+    let content = document.getElementById('content_backlog');
+    content.innerHTML = '';
+    for (let i = tasks.length - 1; i >= 0; i--) {
+        const task = tasks[i];
+        content.innerHTML += templateRenderBacklogTasks(task, i);
+        getUrgencyBorderColour(task, i);
+    }
+}
+
+/**
+ * This function is used to get the border color for each urgency
+ * 
+ * @param {object} task - This parameter is a task object at position i
+ * @param {number} i - This parameter is the position at the tasks array
+ */
+function getUrgencyBorderColour(task, i) {
+    const color = task['urgency'];
+    document.getElementById(`backlog_row_${i}`).classList.add(`border_${color}`);
+}
+
+/**
+ * This function is used to get the font color for each urgency
+ * 
+ * @param {string} fontcolor - This is the fontcolor
+ */
+function geturgencyFontColor(fontcolor) {
+    document.getElementById('urgency_overlay').classList.add(`color_${fontcolor}`)
+}
+
+/**
+ * This function is used to edit a task which is already in the backlog and board
+ * 
+ * @param {string} id - This parameter is the position at the tasks array
+ */
+function editTask(id) {
+    let content = document.getElementById('task_overlay');
+    content.innerHTML = '';
+    content.innerHTML = templateEditTask(id);
+    loadInfosEditTask(id);
+}
+
+/**
+ * This function is used to load all details which are in each task
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ */
+function loadInfosEditTask(id){
+    document.getElementById('title').value = tasks[id]['title'];
+    document.getElementById('date').value =  tasks[id]['date'];
+    document.getElementById('urgency').value = tasks[id]['urgency'];
+    document.getElementById('description').value = tasks[id]['description'];
+}
+
+/**
+ * This function is used to save the edit the user made to a task
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ */
+async function saveEdit(id) {
+    overwriteInfosEditTask(id);
+    await saveTasks();
+    reloadBacklog();
+}
+
+/**
+ * This function is used to overwrite all infos with the current edit
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ */
+function overwriteInfosEditTask(id){
+    tasks[id]['title'] = document.getElementById('title').value
+    tasks[id]['date'] = document.getElementById('date').value
+    tasks[id]['category'] = document.getElementById('catagory').value
+    tasks[id]['urgency'] = document.getElementById('urgency').value
+    tasks[id]['description'] = document.getElementById('description').value
+}
+
+/**
+ * This function is used to delete a task
+ * 
+ * @param {number} i - This parameter is the position at the tasks array
+ */
+async function deleteTask(i) { 
+    tasks.splice(i, 1);
+    setNewIdForEachTask();
+    await saveTasks();
+    reloadBacklog();
+}
+
+/**
+ * This function is used to set task id to its position of tasks array if its not empty
+ */
+function setNewIdForEachTask() {
+    if (tasks.length != 0) {
+        for (let i = 0; i &lt;= tasks.length; i++) {
+            tasks[i]['id'] = i;
+        }
+    }
+}
+
+/**
+ * This function is used to reload the backlog
+ * 
+ */
+function reloadBacklog() {
+    window.open("backlog.html", "_self");
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addHighlight">addHighlight</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeSingleView">closeSingleView</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#dropTask">dropTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#endMoveToOtherBoard">endMoveToOtherBoard</a></li><li><a href="global.html#forwardingNextFunctions">forwardingNextFunctions</a></li><li><a href="global.html#forwardingToBoard">forwardingToBoard</a></li><li><a href="global.html#getTaskFieldsValue">getTaskFieldsValue</a></li><li><a href="global.html#getTodoBorderLeft">getTodoBorderLeft</a></li><li><a href="global.html#getUrgencyBorderColour">getUrgencyBorderColour</a></li><li><a href="global.html#geturgencyFontColor">geturgencyFontColor</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadInfosEditTask">loadInfosEditTask</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#navbarSelection">navbarSelection</a></li><li><a href="global.html#openSingleView">openSingleView</a></li><li><a href="global.html#overwriteInfosEditTask">overwriteInfosEditTask</a></li><li><a href="global.html#reloadBacklog">reloadBacklog</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderBacklogTasks">renderBacklogTasks</a></li><li><a href="global.html#renderBoards">renderBoards</a></li><li><a href="global.html#renderTasksAtBoard">renderTasksAtBoard</a></li><li><a href="global.html#saveEdit">saveEdit</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveTasks">saveTasks</a></li><li><a href="global.html#selectUser">selectUser</a></li><li><a href="global.html#setNewIdForEachTask">setNewIdForEachTask</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateRenderBacklogTasks">templateRenderBacklogTasks</a></li><li><a href="global.html#templateRenderBoards">templateRenderBoards</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 03 2022 21:01:52 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

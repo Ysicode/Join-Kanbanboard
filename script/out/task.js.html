@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: task.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: task.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let users = ['Gast','Simon Weiss', 'Kevin Schimke', 'Baris Aslan'];
+let currentUser = 'Gast';
+
+/**
+ * This function is used to create a task
+ * 
+ */
+async function createTask() {
+    let task = getTaskFieldsValue();
+    tasks.push(task);
+    await saveTasks();
+    forwardingToBoard();
+}
+
+/**
+ * This function gets the value of the input the current user is typing
+ * 
+ * @returns - The value in JSON
+ */
+function getTaskFieldsValue() {
+    let title = document.getElementById('title');
+    let date = document.getElementById('date');
+    let catagory = document.getElementById('catagory');
+    let urgency = document.getElementById('urgency');
+    let description = document.getElementById('description');
+    let id = tasks.length;
+    let user;
+    if(currentUser == 'Gast') {
+        user = users[0];
+    }else{
+        user = users[currentUser]
+    }
+    return {
+        'title': title.value,
+        'date': date.value,
+        'catagory': catagory.value,
+        'urgency': urgency.value,
+        'description': description.value,
+        'status': 'todo',
+        'id': id,
+        'user' : user
+    }
+}
+
+/**
+ * This function is used to open the board.html
+ * 
+ */
+function forwardingToBoard() {
+    window.open("board.html", "_self");
+}
+
+/**
+ * This function used add a class to the current user
+ * 
+ * @param {string} userID - This is the current user
+ */
+function selectUser(userID) {
+    if (currentUser == 'Gast') {
+        currentUser = userID;
+        document.getElementById('user_' + currentUser).classList.add('taskUserSelected')
+    } else {
+        if (userID != currentUser) {
+            document.getElementById('user_' + currentUser).classList.remove('taskUserSelected')
+            document.getElementById('user_' + userID).classList.add('taskUserSelected')
+        } else {
+            document.getElementById('user_' + currentUser).classList.add('taskUserSelected')
+        }
+    }
+    currentUser = userID;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addHighlight">addHighlight</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeSingleView">closeSingleView</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#dropTask">dropTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#endMoveToOtherBoard">endMoveToOtherBoard</a></li><li><a href="global.html#forwardingNextFunctions">forwardingNextFunctions</a></li><li><a href="global.html#forwardingToBoard">forwardingToBoard</a></li><li><a href="global.html#getTaskFieldsValue">getTaskFieldsValue</a></li><li><a href="global.html#getTodoBorderLeft">getTodoBorderLeft</a></li><li><a href="global.html#getUrgencyBorderColour">getUrgencyBorderColour</a></li><li><a href="global.html#geturgencyFontColor">geturgencyFontColor</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadInfosEditTask">loadInfosEditTask</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#navbarSelection">navbarSelection</a></li><li><a href="global.html#openSingleView">openSingleView</a></li><li><a href="global.html#overwriteInfosEditTask">overwriteInfosEditTask</a></li><li><a href="global.html#reloadBacklog">reloadBacklog</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderBacklogTasks">renderBacklogTasks</a></li><li><a href="global.html#renderBoards">renderBoards</a></li><li><a href="global.html#renderTasksAtBoard">renderTasksAtBoard</a></li><li><a href="global.html#saveEdit">saveEdit</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveTasks">saveTasks</a></li><li><a href="global.html#selectUser">selectUser</a></li><li><a href="global.html#setNewIdForEachTask">setNewIdForEachTask</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateRenderBacklogTasks">templateRenderBacklogTasks</a></li><li><a href="global.html#templateRenderBoards">templateRenderBoards</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 03 2022 21:01:52 GMT+0100 (GMT+01:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
