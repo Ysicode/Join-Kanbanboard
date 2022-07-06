@@ -9,7 +9,7 @@ async function createTask() {
     let task = getTaskFieldsValue();
     tasks.push(task);
     await saveTasks();
-    forwardingToBoard();
+    openPage('backlog.html');
 }
 
 /**
@@ -36,18 +36,10 @@ function getTaskFieldsValue() {
         'catagory': catagory.value,
         'urgency': urgency.value,
         'description': description.value,
-        'status': 'todo',
+        'status': 'backlog',
         'id': id,
         'user' : user
     }
-}
-
-/**
- * This function is used to open the board.html
- * 
- */
-function forwardingToBoard() {
-    window.open("board.html", "_self");
 }
 
 /**

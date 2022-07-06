@@ -33,8 +33,7 @@ function templateRenderBacklogTasks(task, i) {
  */
 function templateEditTask(id) {
     return /*html*/`
-    <div class="card">
-        <img onclick="closeSingleView()" class="cancel_icon" src="img/x.png" alt="">
+    <div class="card card_singleView" onclick="event.stopPropagation()">
             <form onsubmit="event.preventDefault(), saveEdit(${id})">
                 <div class="addTask">
                     <div class="addTaskChild fontColor">
@@ -71,8 +70,9 @@ function templateEditTask(id) {
                     </div>
                     <div class="addTaskChild fontColor">
                         <div class="btnContainer">
-                            <button onclick="deleteTask(${id})" class="createbtn" type="submit">Delete</button>
+                            <button onclick="deleteTask(${id})" class="createbtn background_4" type="submit">Delete</button>
                             <button class="createbtn" type="submit">SAVE EDIT</button>
+                            <button onclick="moveToBoard(${id})" class="createbtn background_3" type="submit">Move to Board</button>
                         </div>
                     </div>
                 </div>

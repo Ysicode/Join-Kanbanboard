@@ -48,3 +48,12 @@ async function saveTasks() {
     let taskAsString = JSON.stringify(tasks);
     await backend.setItem('tasks', taskAsString);
 }
+
+/**
+ * This function is used to open the new Site
+ * 
+ * @param {string} page - This parameter is the current selected html page
+ */
+ function openPage(site) {
+    window.open(site , "_self");
+}

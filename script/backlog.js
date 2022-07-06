@@ -4,7 +4,7 @@
  * @param {number} i - This parameter is the position at the tasks array
  */
 function openSingleView(i) {
-    document.getElementById('task_overlay').classList.remove('d_none');
+    document.getElementById('task_overlay').classList.remove('d-none');
     editTask(i);
 }
 
@@ -13,7 +13,7 @@ function openSingleView(i) {
  * 
  */
 function closeSingleView() {
-    document.getElementById('task_overlay').classList.add('d_none');
+    document.getElementById('task_overlay').classList.add('d-none');
 }
 
 /**
@@ -82,7 +82,7 @@ function loadInfosEditTask(id){
 async function saveEdit(id) {
     overwriteInfosEditTask(id);
     await saveTasks();
-    reloadBacklog();
+    openPage('backlog.html');
 }
 
 /**
@@ -107,7 +107,21 @@ async function deleteTask(i) {
     tasks.splice(i, 1);
     setNewIdForEachTask();
     await saveTasks();
-    reloadBacklog();
+    openPage('backlog.html');
+}
+
+/**
+ * This function is used to change the Status of a task from 'Backlog' to 'TODO'
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ */
+async function moveToBoard(id){
+    currentStatus = tasks[id]['status'];
+    if(currentStatus == 'backlog'){
+        tasks[id]['status'] = 'todo'
+    }
+    await saveTasks();
+    openPage('board.html');
 }
 
 /**
@@ -117,12 +131,4 @@ function setNewIdForEachTask() {
         for (let i = 0; i < tasks.length; i++) {
             tasks[i]['id'] = i;
         }
-}
-
-/**
- * This function is used to reload the backlog
- * 
- */
-function reloadBacklog() {
-    window.open("backlog.html", "_self");
 }

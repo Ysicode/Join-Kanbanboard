@@ -32,7 +32,7 @@
  * @param {number} i - This parameter is the position at the tasks array
  */
 function openSingleView(i) {
-    document.getElementById('task_overlay').classList.remove('d_none');
+    document.getElementById('task_overlay').classList.remove('d-none');
     editTask(i);
 }
 
@@ -41,7 +41,7 @@ function openSingleView(i) {
  * 
  */
 function closeSingleView() {
-    document.getElementById('task_overlay').classList.add('d_none');
+    document.getElementById('task_overlay').classList.add('d-none');
 }
 
 /**
@@ -110,7 +110,7 @@ function loadInfosEditTask(id){
 async function saveEdit(id) {
     overwriteInfosEditTask(id);
     await saveTasks();
-    reloadBacklog();
+    openPage('backlog.html');
 }
 
 /**
@@ -135,26 +135,30 @@ async function deleteTask(i) {
     tasks.splice(i, 1);
     setNewIdForEachTask();
     await saveTasks();
-    reloadBacklog();
+    openPage('backlog.html');
+}
+
+/**
+ * This function is used to change the Status of a task from 'Backlog' to 'TODO'
+ * 
+ * @param {number} id - This parameter is the position at the tasks array
+ */
+async function moveToBoard(id){
+    currentStatus = tasks[id]['status'];
+    if(currentStatus == 'backlog'){
+        tasks[id]['status'] = 'todo'
+    }
+    await saveTasks();
+    openPage('board.html');
 }
 
 /**
  * This function is used to set task id to its position of tasks array if its not empty
  */
 function setNewIdForEachTask() {
-    if (tasks.length != 0) {
-        for (let i = 0; i &lt;= tasks.length; i++) {
+        for (let i = 0; i &lt; tasks.length; i++) {
             tasks[i]['id'] = i;
         }
-    }
-}
-
-/**
- * This function is used to reload the backlog
- * 
- */
-function reloadBacklog() {
-    window.open("backlog.html", "_self");
 }</code></pre>
         </article>
     </section>
@@ -165,13 +169,13 @@ function reloadBacklog() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addHighlight">addHighlight</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeSingleView">closeSingleView</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#dropTask">dropTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#endMoveToOtherBoard">endMoveToOtherBoard</a></li><li><a href="global.html#forwardingNextFunctions">forwardingNextFunctions</a></li><li><a href="global.html#forwardingToBoard">forwardingToBoard</a></li><li><a href="global.html#getTaskFieldsValue">getTaskFieldsValue</a></li><li><a href="global.html#getTodoBorderLeft">getTodoBorderLeft</a></li><li><a href="global.html#getUrgencyBorderColour">getUrgencyBorderColour</a></li><li><a href="global.html#geturgencyFontColor">geturgencyFontColor</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadInfosEditTask">loadInfosEditTask</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#navbarSelection">navbarSelection</a></li><li><a href="global.html#openSingleView">openSingleView</a></li><li><a href="global.html#overwriteInfosEditTask">overwriteInfosEditTask</a></li><li><a href="global.html#reloadBacklog">reloadBacklog</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderBacklogTasks">renderBacklogTasks</a></li><li><a href="global.html#renderBoards">renderBoards</a></li><li><a href="global.html#renderTasksAtBoard">renderTasksAtBoard</a></li><li><a href="global.html#saveEdit">saveEdit</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveTasks">saveTasks</a></li><li><a href="global.html#selectUser">selectUser</a></li><li><a href="global.html#setNewIdForEachTask">setNewIdForEachTask</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateRenderBacklogTasks">templateRenderBacklogTasks</a></li><li><a href="global.html#templateRenderBoards">templateRenderBoards</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addHighlight">addHighlight</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#closeSingleView">closeSingleView</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#dropTask">dropTask</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#endMoveToOtherBoard">endMoveToOtherBoard</a></li><li><a href="global.html#forwardingNextFunctions">forwardingNextFunctions</a></li><li><a href="global.html#getTaskFieldsValue">getTaskFieldsValue</a></li><li><a href="global.html#getTodoBorderLeft">getTodoBorderLeft</a></li><li><a href="global.html#getUrgencyBorderColour">getUrgencyBorderColour</a></li><li><a href="global.html#geturgencyFontColor">geturgencyFontColor</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadInfosEditTask">loadInfosEditTask</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#moveToBoard">moveToBoard</a></li><li><a href="global.html#navbarSelection">navbarSelection</a></li><li><a href="global.html#openPage">openPage</a></li><li><a href="global.html#openSingleView">openSingleView</a></li><li><a href="global.html#overwriteInfosEditTask">overwriteInfosEditTask</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#renderBacklogTasks">renderBacklogTasks</a></li><li><a href="global.html#renderBoards">renderBoards</a></li><li><a href="global.html#renderTasksAtBoard">renderTasksAtBoard</a></li><li><a href="global.html#saveEdit">saveEdit</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveTasks">saveTasks</a></li><li><a href="global.html#selectUser">selectUser</a></li><li><a href="global.html#setNewIdForEachTask">setNewIdForEachTask</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateRenderBacklogTasks">templateRenderBacklogTasks</a></li><li><a href="global.html#templateRenderBoards">templateRenderBoards</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 03 2022 21:01:52 GMT+0100 (GMT+01:00)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Wed Jul 06 2022 11:19:22 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>
