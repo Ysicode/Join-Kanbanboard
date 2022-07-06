@@ -13,20 +13,14 @@
 
     <link rel="stylesheet" href="style/font_PT-Sans.css">
     <link rel="stylesheet" href="style/generalstyle.css">
-    <link rel="stylesheet" href="style/media.css">
     <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/backlog.css">
-    <link rel="stylesheet" href="style/taskSingleView.css">
     <link rel="stylesheet" href="style/board.css">
-    <link rel="stylesheet" href="style/task.css">
 
-    <script src="script/mini_backend.js"></script>
-    <script src="script/templates.js"></script>
-    <script src="script/task.js"></script>
-    <script src="script/board.js"></script>
-    <script src="script/script.js"></script>
     <script src="script/load.js"></script>
-    <script src="script/backlog.js"></script>
+    <script src="script/mini_backend.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/board.js"></script>
+    <script src="script/templates.js"></script>
 
     <title>Gruppenarbeit Join 265</title>
 
@@ -34,7 +28,6 @@
 
 <body onload="init('board')">
     <div HTML_Template="templateHTML/navbar.html"></div>
-    <div HTML_Template="templateHTML/taskSingleView.html"></div>
     <div class="mainArea background_1">
         <div class="headline">
             <h1 id="headline">Board</h1>
@@ -44,22 +37,22 @@
             <div class="content_board">
                 <div class="board_columns">
                     <h2>TO DO</h2>
-                    <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event), addHighlight('todo')" id="tasks_todo" class="area_toDo">
+                    <div ondrop="dropTask('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event), addHighlight('todo')" id="tasks_todo" class="area_toDo borderBoard_Left">
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>IN PROGRESS</h2>
-                    <div ondrop="dropTask('in_progress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event), addHighlight('in_progress')" id="tasks_in_progress" class="area_inProgress">     
+                    <div ondrop="dropTask('in_progress')" ondragleave="removeHighlight('in_progress')" ondragover="allowDrop(event), addHighlight('in_progress')" id="tasks_in_progress" class="area_toDo borderBoard_Left">     
                     </div>
                 </div>
                 <div  class="board_columns">
                     <h2>TESTING</h2>
-                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event), addHighlight('testing')" id="tasks_testing" class="area_toDo">                      
+                    <div ondrop="dropTask('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event), addHighlight('testing')" id="tasks_testing" class="area_toDo borderBoard_Left">                      
                     </div>
                 </div>
                 <div class="board_columns">
                     <h2>DONE</h2>
-                    <div ondrop="dropTask('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event), addHighlight('done')" id="tasks_done" class="area_Done">
+                    <div ondrop="dropTask('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event), addHighlight('done')" id="tasks_done" class="area_toDo borderBoard_Left borderBoard_Right">
                     </div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+/* navbar */
+
 .navbarMain{
     height: calc(100% - 32px);
     display: flex;
@@ -44,4 +46,68 @@
 
 .mediaFooterLegal{
     display: none;
+}
+
+
+
+/*
+Media Queries 
+navbar */
+
+
+
+@media (max-width :1000px) {
+
+    body{
+        display: block;
+    }
+    .mainArea{
+        width: auto;
+        margin-left: 0;
+        min-height: calc(100vh - 142px) !important;
+    }
+    .navbarLinks{
+        flex-direction: row !important;
+    }
+    .navbarLinks a{
+        padding: 12px !important;
+        flex-direction: column-reverse;
+    }
+    .navbarLinks a div{
+        margin-right: 0px !important;
+        height: 3px !important;
+        width: 100% !important;
+        margin-top: 3px;
+    }
+
+    .navbarMain{
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center;
+        padding: 16px !important;
+        position: unset !important;
+        
+    }
+    .navbarSub{
+        display: none !important;    
+    }
+    .navbarLogo{
+        padding-bottom: 0px !important;
+        padding: 12px !important;
+    }
+    .mediaNavbarLogo{
+        display: block !important;
+    }
+}
+
+@media (max-width: 650px){
+    .navbarMain {
+        flex-direction: column !important;
+    }
+    .mediaNavbarLegal{
+        display: none !important;
+    }
+    .mediaFooterLegal{
+        display: flex !important;
+    }
 }

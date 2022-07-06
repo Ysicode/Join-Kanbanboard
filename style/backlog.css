@@ -1,24 +1,4 @@
-.d_none {
-    display: none;
-}
-
-.d_flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.d_flex_column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
+/* backlog.html */
 
 .content_backlog {
     display: flex;
@@ -28,8 +8,10 @@ p {
     height: 100%;
 }
 
-.area_tasks_backlog {
-    width: 100%;
+.d_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .backlog_columns {
@@ -39,15 +21,15 @@ p {
     justify-content: flex-start;
 }
 
+.column_assignedTo {
+    margin-left: 15px;
+    width: 20%;
+}
+
 .columns_titles {
     font-size: 20px;
     color: #1f3190;
     font-weight: bold;
-}
-
-.column_assignedTo {
-    margin-left: 15px;
-    width: 20%;
 }
 
 .column_Title {
@@ -61,6 +43,19 @@ p {
 .column_details {
     width: 45%;
 }
+
+.d_flex_column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.area_tasks_backlog {
+    width: 100%;
+}
+
+/* templateRenderBacklogTasks */
 
 .backlog_rows {
     height: 100px;
@@ -128,9 +123,29 @@ p {
     overflow: hidden;
 }
 
-.d_none {
-    display: none;
+/* templateEditTask */
+
+.card_singleView{
+    border: 1px solid #1E3190;
+    border-radius: 15px;
+    margin: 0vh 5vw;
 }
+
+.area_task_overlay {
+    background: #e1e4f1d1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+}
+
+
+
+/*
+Media Queries 
+backlog.html */
+
+
 
 @media (max-width: 1000px) {
     .backlog_columns {
@@ -150,7 +165,7 @@ p {
 
     .backlog_user_pic {
         width: 30px;
-    height: 30px;
+        height: 30px;
     }
 
     .backlog_user_name, .backlog_task_category {

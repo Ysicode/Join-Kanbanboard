@@ -1,77 +1,3 @@
-.card {
-    background-color: rgb(225, 228, 241);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-.addTask {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.addTaskChild {
-    margin-left: 10px;
-    margin-right: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    width: 40%;
-}
-
-.catagoryHeadline {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.userInput {
-    height: 45px;
-    width: 100%;
-    border-radius: 4px;
-    border: none;
-    padding: 10px 10px 10px 10px;
-    font-size: 20px;
-    font-family: 'PT Sans';
-}
-
-.userSelect {
-    width: calc(100% + 20px);
-    height: 65px;
-    border-radius: 4px;
-    border: none;
-    padding: 10px 10px 10px 10px;
-    font-size: 20px;
-    font-family: 'PT Sans';
-}
-
-.userInput::placeholder {
-    text-align: start;
-    padding-left: 5px;
-}
-
-.description {
-    height: 230px;
-    width: 100%;
-    font-size: 20px;
-    border-radius: 4px;
-    padding: 10px;
-    border: none;
-    resize: none;
-    font-family: 'PT Sans';
-    font-style: normal;
-    font-weight: 400;
-}
-
-textarea {
-    text-align: flex-start;
-}
-
-.btnContainer {
-    margin-top: 45px;
-    display: flex;
-    width: 100%;
-}
-
 .cancelbtn {
     font-size: 17px;
     border: none;
@@ -79,22 +5,6 @@ textarea {
     cursor: pointer;
     color: #1E3190;
     font-weight: bold;
-}
-
-.createbtn {
-    padding: 13px;
-    font-size: 20px;
-    border-radius: 4px;
-    border: none;
-    margin-right: 20px;
-    cursor: pointer;
-    background-color: #1E3190;
-    color: white;
-    font-weight: bold;
-}
-
-.createbtn:hover {
-    opacity: 0.8;
 }
 
 .cancelbtn:hover {
@@ -121,66 +31,16 @@ textarea {
     opacity: 1;
 }
 
-@media (max-width: 1000px) {
-    .addTask {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 
-    .addTaskChild {
-        width: 70%;
-    }
-}
+/*
+Media Queries 
+backlog.html */
 
-@media (max-width: 650px) {
-    .addTask {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
 
-    .addTaskChild {
-        width: 90%;
-    }
-}
 
 @media (max-height: 1000px) {
-
-    .addTaskChild {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .catagoryHeadline {
-        font-size: 15px;
-    }
-
-    .userInput {
-        height: 25px;
-        font-size: 15px;
-        padding: 5px 10px 5px 10px;
-    }
-
-    .userSelect {
-        height: 40px;
-        padding: 5px 10px 5px 10px;
-        font-size: 15px;
-    }
-
-    .description {
-        height: 150px;
-        font-size: 15px;
-    }
-
     .taskUserImg {
         height: 40px;
-    }
-
-    .createbtn {
-        font-size: 15px;
     }
 
     .cancelbtn {
