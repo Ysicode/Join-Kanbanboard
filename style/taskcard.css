@@ -86,6 +86,10 @@
     opacity: 0.8;
 }
 
+.noFlowByOpenCard{
+    overflow-y: hidden;
+}
+
 
 
 /*
@@ -105,12 +109,29 @@ Task.html and Backlog.html */
     .addTaskChild {
         width: 70%;
     }
+    .btnContainer{
+        justify-content: center;
+        margin-left: 10px;
+    }
+    .createbtn{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 @media (max-width: 650px) {
     .addTaskChild {
         width: 90%;
     }
+    .createbtn {
+        font-size: 12px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .card_singleView{
+        margin: 0vh 1vw;
+    }
+
 }
 
 @media (max-height: 1000px) {

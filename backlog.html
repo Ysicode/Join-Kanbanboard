@@ -27,7 +27,7 @@
 
 </head>
 
-<body onload="init('backlog')">
+<body id="body" onload="init('backlog')">
     <div HTML_Template="templateHTML/navbar.html"></div>
     <div HTML_Template="templateHTML/taskSingleView.html"></div>
     <div class="mainArea background_1">
@@ -39,16 +39,16 @@
             <div class="content_backlog">
                 <div class="backlog_columns">
                     <div class="column_assignedTo">
-                        <p class="columns_titles">ASSIGNED TO</p>
+                        <h2 class="columns_titles">ASSIGNED TO</h2>
                     </div>
                     <div class="column_Title">
-                        <p class="columns_titles">TITLE</p>
+                        <h2 class="columns_titles">TITLE</h2>
                     </div>
                     <div class="column_category">
-                        <p class="columns_titles">CATEGORY</p>
+                        <h2 class="columns_titles">CATEGORY</h2>
                     </div>
                     <div class="column_details">
-                        <p class="columns_titles">DETAILS</p>
+                        <h2 class="columns_titles">DETAILS</h2>
                     </div>
                 </div>
                 <div id="content_backlog" class="d_flex_column area_tasks_backlog">

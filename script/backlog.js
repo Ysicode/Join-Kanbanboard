@@ -5,6 +5,7 @@
  */
 function openSingleView(i) {
     document.getElementById('task_overlay').classList.remove('d-none');
+    document.getElementById('body').classList.add('noFlowByOpenCard');
     editTask(i);
 }
 
@@ -14,6 +15,7 @@ function openSingleView(i) {
  */
 function closeSingleView() {
     document.getElementById('task_overlay').classList.add('d-none');
+    document.getElementById('body').classList.remove('noFlowByOpenCard');
 }
 
 /**
